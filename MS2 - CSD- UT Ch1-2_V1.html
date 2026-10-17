@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>公民與社會發展科 主題1（Ch 1.1–1.3 & Ch 2.1–2.4）｜20小時 80/20 × 費曼教學法無遺漏互動模型（紅字重點版）</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: "Inter", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    }
+    .tab-active {
+      background-color: #1d4ed8;
+      color: #ffffff;
+      font-weight: 700;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+    /* 重點粗體及紅色樣式 */
+    .hl-red {
+      color: #dc2626;
+      font-weight: 700;
+      background-color: #fef2f2;
+      padding: 0 0.2rem;
+      border-radius: 0.25rem;
+    }
+    body.hide-red-hl .hl-red {
+      color: inherit;
+      font-weight: inherit;
+      background-color: transparent;
+      padding: 0;
+    }
+    /* 課節重溫填充空格樣式（點擊後以粗體及紅色顯示） */
+    .blank-pill {
+      display: inline-block;
+      min-width: 4.5rem;
+      padding: 0.1rem 0.5rem;
+      margin: 0 0.2rem;
+      border-radius: 0.375rem;
+      border-bottom: 2px dashed #dc2626;
+      background-color: #fff1f2;
+      color: transparent;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+      font-weight: 700;
+      text-align: center;
+    }
+    .blank-pill.revealed {
+      color: #dc2626;
+      background-color: #fee2e2;
+      border-bottom: 2px solid #dc2626;
+      font-weight: 800;
+    }
+    @media print {
+      .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+  <!-- Top Sticky Header -->
+  <header class="bg-slate-900 text-white border-b border-slate-800 sticky top-0 z-30 shadow-md no-print">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+      <div>
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="px-2.5 py-0.5 text-xs font-bold bg-red-600 rounded-full">重點粗體紅字標示版</span>
+          <span class="px-2.5 py-0.5 text-xs font-bold bg-blue-600 rounded-full">80/20 法則 × 費曼學習法</span>
+          <span class="px-2.5 py-0.5 text-xs font-bold bg-emerald-600 rounded-full">100% 無遺漏對應 Ch 1.1–1.3 &amp; Ch 2.1–2.4</span>
+        </div>
+        <h1 class="text-base md:text-xl font-bold mt-1">公民與社會發展科 主題 1（課題 1 &amp; 2）：20 小時極速掌握互動模型</h1>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2.5">
+        <!-- Global Search Input -->
+        <div class="relative">
+          <input id="globalSearchInput" type="text" placeholder="🔍 搜尋全書條文/年份/考點..." class="bg-slate-800 text-white text-xs rounded-lg px-3 py-2 border border-slate-700 focus:outline-none focus:border-red-400 w-44 sm:w-52" />
+        </div>
+
+        <!-- Toggle Bold Red Highlights Button -->
+        <button id="btnToggleRedHl" class="px-3 py-2 bg-red-600 hover:bg-red-500 text-white rounded-lg text-xs font-bold transition-all shadow-sm">
+          🔴 重點紅字：開啟中
+        </button>
+
+        <!-- Full Book Toggle Button -->
+        <button id="btnToggleFullBook" class="px-3 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg text-xs font-bold transition-all">
+          📖 展開全書無遺漏總覽
+        </button>
+
+        <!-- Overall Progress -->
+        <div class="text-right hidden sm:block">
+          <div class="text-[11px] text-slate-400">總體溫習進度（10節 × 2小時）</div>
+          <div class="flex items-center gap-2 mt-1">
+            <div class="w-24 h-2.5 bg-slate-700 rounded-full overflow-hidden">
+              <div id="globalProgressBar" class="h-full bg-emerald-400 transition-all duration-300" style="width: 0%"></div>
+            </div>
+            <span id="globalProgressText" class="text-xs font-bold text-emerald-400">0 / 10 節</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search / Full-Book Modal View (Hidden by Default) -->
+  <section id="fullBookSection" class="hidden max-w-7xl mx-auto px-4 py-6 w-full space-y-6">
+    <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5 flex flex-wrap items-center justify-between gap-3">
+      <div>
+        <h2 id="fullBookHeaderTitle" class="text-lg font-bold text-slate-900">📖 課題 1（Ch 1.1–1.3）及課題 2（Ch 2.1–2.4）全書無遺漏內容與答案總覽（紅字重點版）</h2>
+        <p class="text-xs text-slate-500 mt-1">所有必背年份、法例條文、關鍵概念與標準答案均已用<strong class="hl-red">粗體及紅色</strong>標示。</p>
+      </div>
+      <div class="flex gap-2">
+        <button onclick="window.print()" class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-bold">🖨️ 列印 / 匯出 PDF</button>
+        <button id="btnCloseFullBook" class="px-3 py-1.5 bg-rose-600 hover:bg-rose-500 text-white rounded-lg text-xs font-bold">✕ 返回分節互動模式</button>
+      </div>
+    </div>
+    <div id="fullBookContainer" class="space-y-6"></div>
+  </section>
+
+  <!-- Main Interactive Workspace -->
+  <main id="interactiveMain" class="max-w-7xl mx-auto px-4 py-6 grid grid-cols-1 lg:grid-cols-12 gap-6 flex-1 w-full">
+
+    <!-- Left Sidebar: 10 Sessions Navigation & Timer -->
+    <aside class="lg:col-span-4 space-y-4 no-print">
+      <!-- 15-Minute Review & 105-Minute Study Timer -->
+      <div class="bg-slate-900 text-white rounded-xl shadow-sm p-4 border border-slate-800">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-bold text-amber-400">⏱️ 2 小時課堂 / 15 分鐘複盤計時器</h3>
+          <span id="timerPhaseBadge" class="text-[11px] px-2 py-0.5 rounded bg-slate-800 text-amber-300 font-semibold">15:00 課後複盤</span>
+        </div>
+        <div id="timerDisplay" class="text-3xl font-mono font-bold text-center my-3 tracking-widest text-white">15:00</div>
+        <div class="grid grid-cols-4 gap-1.5">
+          <button id="btnStartTimer" class="px-2 py-1.5 bg-emerald-600 hover:bg-emerald-500 rounded-lg text-xs font-bold">開始/暫停</button>
+          <button id="btnReset35" class="px-2 py-1.5 bg-slate-700 hover:bg-slate-600 rounded-lg text-[11px] font-semibold">35m 精讀</button>
+          <button id="btnReset40" class="px-2 py-1.5 bg-slate-700 hover:bg-slate-600 rounded-lg text-[11px] font-semibold">40m 費曼</button>
+          <button id="btnReset15" class="px-2 py-1.5 bg-amber-700 hover:bg-amber-600 rounded-lg text-[11px] font-semibold">15m 複盤</button>
+        </div>
+      </div>
+
+      <!-- 10 Sessions List -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-4">
+        <div class="flex items-center justify-between mb-2">
+          <h2 class="text-xs font-bold text-slate-700 uppercase tracking-wider">書本章節導航（10 節 × 2 小時）</h2>
+          <span class="text-[11px] text-red-600 font-bold">Ch 1.1 – Ch 2.4</span>
+        </div>
+        <p class="text-xs text-slate-500 mb-3">點擊任一節次切換<strong class="hl-red">紅字標示</strong>課本內容、AnsCheck 答案庫、費曼演練與 15 分鐘快測：</p>
+        <div id="sessionList" class="space-y-1.5 max-h-[540px] overflow-y-auto pr-1"></div>
+      </div>
+    </aside>
+
+    <!-- Right Content Area -->
+    <section class="lg:col-span-8 space-y-5">
+      <!-- Session Header Card -->
+      <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <div>
+            <div class="flex flex-wrap items-center gap-2">
+              <span id="sessionChapterBadge" class="inline-block px-3 py-1 text-xs font-bold bg-blue-100 text-blue-800 rounded-full"></span>
+              <span id="sessionPdfBadge" class="inline-block px-3 py-1 text-xs font-semibold bg-slate-100 text-slate-700 rounded-full"></span>
+            </div>
+            <h2 id="sessionTitle" class="text-xl font-bold text-slate-900 mt-2"></h2>
+            <p id="sessionSubtitle" class="text-sm text-slate-600 mt-1"></p>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="btnPrevSession" class="px-3 py-2 rounded-lg text-xs font-bold border border-slate-300 bg-white hover:bg-slate-100 text-slate-700">← 上一節</button>
+            <button id="btnNextSession" class="px-3 py-2 rounded-lg text-xs font-bold border border-slate-300 bg-white hover:bg-slate-100 text-slate-700">下一節 →</button>
+            <button id="btnMarkComplete" class="px-3.5 py-2 rounded-lg text-xs font-bold border transition-all"></button>
+          </div>
+        </div>
+
+        <!-- 2-Hour Session Breakdown Bar -->
+        <div class="mt-4 pt-4 border-t border-slate-100 grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+          <div class="bg-red-50/70 p-2.5 rounded-lg border border-red-200">
+            <div class="font-bold text-red-700">0–35m（35分鐘）</div>
+            <div class="text-slate-600 mt-0.5">Step 1：鎖定<strong class="hl-red">紅字粗體</strong>核心考點</div>
+          </div>
+          <div class="bg-indigo-50/70 p-2.5 rounded-lg border border-indigo-200">
+            <div class="font-bold text-indigo-800">35–75m（40分鐘）</div>
+            <div class="text-slate-600 mt-0.5">Step 2：費曼「教懂12歲生」演練</div>
+          </div>
+          <div class="bg-purple-50/70 p-2.5 rounded-lg border border-purple-200">
+            <div class="font-bold text-purple-800">75–105m（30分鐘）</div>
+            <div class="text-slate-600 mt-0.5">Step 3–4：核對 AnsCheck 填充與問答</div>
+          </div>
+          <div class="bg-amber-50 p-2.5 rounded-lg border border-amber-200">
+            <div class="font-bold text-amber-800">105–120m（15分鐘）</div>
+            <div class="text-amber-700 mt-0.5">課後複盤：完成自測與口訣記憶</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Sub-navigation Tabs -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-1.5 bg-white p-1.5 rounded-xl shadow-sm border border-slate-200">
+        <button id="tabBtnCore" class="py-2.5 px-2 rounded-lg text-xs font-semibold transition-all tab-active">
+          📌 1. 課本無遺漏全內容
+        </button>
+        <button id="tabBtnAns" class="py-2.5 px-2 rounded-lg text-xs font-semibold transition-all text-slate-600 hover:bg-slate-100">
+          📝 2. 填充・活動・評估答案
+        </button>
+        <button id="tabBtnFeynman" class="py-2.5 px-2 rounded-lg text-xs font-semibold transition-all text-slate-600 hover:bg-slate-100">
+          🎙️ 3. 費曼教學法演練場
+        </button>
+        <button id="tabBtnReview" class="py-2.5 px-2 rounded-lg text-xs font-semibold transition-all text-slate-600 hover:bg-slate-100">
+          ⚡ 4. 最後15分鐘複盤快測
+        </button>
+      </div>
+
+      <!-- TAB 1: Exhaustive Core Points, Expected Outcomes, Tables & Resources -->
+      <div id="tabPanelCore" class="bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-6">
+        <!-- Expected Learning Outcomes & Overview -->
+        <div class="bg-slate-50 rounded-xl p-4 border border-slate-200">
+          <div class="text-xs font-bold text-blue-700 uppercase tracking-wider">🎯 課本預期學習成果與 80/20 關鍵提要（<span class="text-red-600">粗體紅字為必記重點</span>）</div>
+          <p id="sessionOutcomes" class="text-xs text-slate-700 mt-1.5 leading-relaxed"></p>
+        </div>
+
+        <!-- Exhaustive Textbook Sections -->
+        <div>
+          <h3 class="text-base font-bold text-slate-900 flex items-center gap-2">
+            📚 課本章節完整無遺漏內容（必記考點已用<span class="hl-red">粗體及紅色</span>標示）
+          </h3>
+          <div id="corePointsList" class="mt-3 space-y-3 text-sm text-slate-700"></div>
+        </div>
+
+        <!-- Structured Summary Table (if present) -->
+        <div id="tableWrapper" class="hidden pt-4 border-t border-slate-200">
+          <h3 id="tableTitle" class="text-base font-bold text-slate-900 mb-3"></h3>
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
+            <table id="sessionTable" class="w-full text-xs text-left border-collapse"></table>
+          </div>
+        </div>
+
+        <!-- Best Resources (Google Drive PDFs + Official Links) -->
+        <div class="pt-4 border-t border-slate-200">
+          <h3 class="text-base font-bold text-slate-900">🔗 本節最佳學習資源（點擊直接開啟 Google Drive 課本 PDF 與官方網站）</h3>
+          <div id="resourcesList" class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2.5"></div>
+        </div>
+      </div>
+
+      <!-- TAB 2: AnsCheck Fill-in-the-blanks, Data Analysis, Classroom Activities & Assessments -->
+      <div id="tabPanelAns" class="hidden bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
+          <div>
+            <h3 class="text-base font-bold text-slate-900">📝 課節重溫填充、資料剖析、課堂活動與能力評估標準答案（AnsCheck 全收錄）</h3>
+            <p class="text-xs text-slate-500 mt-0.5">點擊紅色虛線空格可逐一測試並顯示<strong class="hl-red">粗體紅字答案</strong>，或點擊右方按鈕一鍵顯示全部答案。</p>
+          </div>
+          <button id="btnToggleAllBlanks" class="px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-bold shadow-sm">
+            👁️ 顯示 / 隱藏全部紅字填充答案
+          </button>
+        </div>
+
+        <!-- Fill-in-the-Blanks (課節重溫) -->
+        <div>
+          <h4 class="text-sm font-bold text-red-800 mb-2.5">✏️ 一、「課節重溫」重點填充自測（答案以粗體紅字顯示）</h4>
+          <ul id="blanksList" class="space-y-2.5 text-sm text-slate-800"></ul>
+        </div>
+
+        <!-- Data Analysis / Classroom Activity / Assessment Q&A -->
+        <div class="pt-4 border-t border-slate-200">
+          <h4 class="text-sm font-bold text-indigo-900 mb-2.5">📖 二、「資料剖析」、「課堂活動」及「能力評估」完整題目與標準答案（核心得分字眼以<span class="hl-red">粗體紅字</span>標示）</h4>
+          <div id="qaList" class="space-y-3"></div>
+        </div>
+      </div>
+
+      <!-- TAB 3: Feynman Interactive Simulator -->
+      <div id="tabPanelFeynman" class="hidden bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-5">
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-blue-700 uppercase">🎙️ 費曼教學任務（Teach a 12-Year-Old Challenge）</span>
+            <span class="text-[11px] bg-red-100 text-red-800 px-2 py-0.5 rounded font-bold">核心關鍵詞紅字檢核</span>
+          </div>
+          <p id="feynmanPrompt" class="text-sm font-bold text-slate-900 mt-2 leading-relaxed"></p>
+          <p class="text-xs text-slate-600 mt-2">請在下方輸入框用自己的白話和生活比喻解釋上述問題。系統會自動檢測你是否涵蓋本節必備的核心概念關鍵詞：</p>
+        </div>
+
+        <div>
+          <textarea id="feynmanInput" rows="5" class="w-full rounded-xl border border-slate-300 p-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-red-500" placeholder="試著不看書，用向 12 歲初中生解釋的白話寫下你的理解（包含本節的關鍵年份、條約、法律條文或原則）..."></textarea>
+
+          <div class="mt-2.5 flex flex-wrap items-center justify-between gap-2">
+            <div class="text-xs text-slate-700">
+              必背核心概念詞命中率：<span id="keywordScore" class="font-bold text-red-600">0 / 0</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button id="btnAutoFillFeynman" class="px-3 py-1.5 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg text-xs font-semibold">載入示範答案測試</button>
+              <button id="btnCheckFeynman" class="px-3.5 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-lg text-xs font-bold">診斷我的費曼解釋</button>
+              <button id="btnToggleMasterFeynman" class="px-3.5 py-1.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-bold">顯示 / 隱藏大師級費曼比喻</button>
+            </div>
+          </div>
+
+          <div class="mt-3">
+            <div class="text-[11px] text-slate-500 mb-1.5">本節必備核心概念詞檢核（未命中時為<strong class="text-red-600">粗體紅字</strong>提醒，輸入命中後轉為綠燈）：</div>
+            <div id="keywordBadges" class="flex flex-wrap gap-1.5"></div>
+          </div>
+        </div>
+
+        <div id="masterFeynmanBox" class="hidden bg-indigo-50 border border-indigo-200 rounded-xl p-4 space-y-3">
+          <div class="text-xs font-bold text-indigo-900">💡 大師級費曼白話比喻與滿分答題轉化示範（必記重點以<span class="hl-red">粗體紅字</span>標示）：</div>
+          <p id="masterFeynmanText" class="text-sm text-slate-800 leading-relaxed"></p>
+          <div class="pt-2.5 border-t border-indigo-200 text-xs text-indigo-950 bg-white p-3 rounded-lg border">
+            <strong>🧠 Step 4 終極記憶口訣：</strong> <span id="feynmanMnemonic" class="font-semibold"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: 15-Minute Review & Quiz -->
+      <div id="tabPanelReview" class="hidden bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-5">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-3">
+          <div>
+            <h3 class="text-base font-bold text-slate-900">⚡ 最後 15 分鐘課後複盤：課本概念與能力評估自測</h3>
+            <p class="text-xs text-slate-500 mt-0.5">點擊選項即時批改並顯示<strong class="hl-red">紅字重點詳解</strong>，確保 100% 掌握本節考點。</p>
+          </div>
+          <span id="quizScoreBadge" class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-bold">點擊選項開始作答</span>
+        </div>
+        <div id="quizContainer" class="space-y-4"></div>
+      </div>
+
+    </section>
+  </main>
+
+  <script>
+    const DRIVE_FOLDER = "https://drive.google.com/drive/folders/104a-_YlaSMErHjzaPDANxyfhi1CLxhOX?usp=drive_link";
+    const DRIVE_U1 = "https://drive.google.com/file/d/1oYlgHK9u6P9htG4tYsPTa7XBZ8HxjKQK/view?usp=drivesdk";
+    const DRIVE_U2 = "https://drive.google.com/file/d/1Y1ZZPgm66SNrij4ePk0k2dHXeyENdwC6/view?usp=drivesdk";
+
+    // Helper function: converts **text** into <strong class="hl-red">text</strong>
+    function renderHighlights(str) {
+      if (!str) return "";
+      return str.replace(/\*\*([^*]+)\*\*/g, '<strong class="hl-red">$1</strong>');
+    }
+
+    const SESSIONS = [
+      {
+        id: 1,
+        ch: "Ch 1.1（頁 1–6）",
+        pdf: "CS_T1U1_AnsCheck_RMA.pdf",
+        title: "第 1 節：香港自古以來與中國的關係",
+        subtitle: "1.1A 史前時期文化關連、1.1B 信史時期歷朝管轄、課堂活動 1.1 三大古蹟與六大領土確認原則",
+        outcomes: "【預期學習成果】知識：認識香港問題的由來，了解**香港自古以來就是中國的領土**；掌握**史前考古遺址**、**秦朝（公元前214年）納入版圖**、**歷朝四個縣治演變**及**六大領土確認原則**。",
+        corePoints: [
+          "【領土構成四要素與六大確認原則（頁 6）】領土是指處於國家主權管轄下的地球表面特定部分，包括：**① 領陸、② 領空、③ 領水、④ 底土**。印證香港自古屬於中國領土的**六大確認原則**：**① 血緣關係、② 語言系統、③ 文化承傳、④ 政府管轄權、⑤ 經濟管轄權、⑥ 駐軍權力**。",
+          "【1.1A 史前時期香港與中國內地的文化關連（頁 3，資料 1.1）】香港境內發現數十處史前遺址，出土文物證明**香港先民與珠江流域及中原地區同屬一個文化系統**：\n• **南丫島大灣遺址**：出土**新石器時代中期**（約公元前 4000–前 3000 年）的**彩繪陶器**及**鏤孔圈足陶盤**，器形和紋飾與**珠江三角洲**同期遺址一致。\n• **馬灣東灣仔北遺址**：出土新石器時代晚期至青銅時代初期（約公元前 2500–前 1500 年）先民墓葬及人骨遺骸，經鑑定與珠江流域先民同屬**「亞洲蒙古人種」**，且同樣有**拔齒風俗**。\n• **大嶼山蟹地灣遺址**：出土**青銅時代**（約公元前 1500–前 221 年）**硬陶罐**，反映當時香港受**中原商周青銅文化**影響。",
+          "【1.1B 信史時期歷朝對香港的管轄（頁 4，資料 1.2，必背時序）】**公元前 214 年**（秦始皇三十三年），**秦始皇平定嶺南**，設置南海、桂林、象三郡，**香港正式納入中國版圖**，隸屬南海郡**番禺縣**。自秦朝至清代鴉片戰爭前，香港先後隸屬**四個縣**管轄：\n① **秦漢至東晉初期（公元前 214 年–公元 330 年）：番禺縣**\n② **東晉至唐中葉（331 年–756 年）：寶安縣**（東晉咸和六年設寶安縣，縣治設於今深圳南頭）\n③ **唐中葉至明中葉（757 年–1572 年）：東莞縣**（唐肅宗至德二年改寶安縣為東莞縣）\n④ **明中葉至清代鴉片戰爭前（1573 年–1842 年）：新安縣**（明萬曆元年從東莞縣劃出設立新安縣，取「革故鼎新，去危為安」之意）。",
+          "【歷朝駐軍防衛與東漢李鄭屋漢墓（頁 4，資料 1.3）】\n• **唐朝屯門駐軍**：**《新唐書》**記載，**唐朝於屯門設立軍鎮（「屯門鎮」），駐兵二千多人**，負責防衛海防及保護廣州對外海上交通貿易。\n• **東漢李鄭屋漢墓**：1955 年在深水埗發現**東漢時期（公元 25–220 年）磚室墓**，墓磚刻有「大吉番禺」等字樣並出土漢代陶器及青銅器，證實**東漢時已有中原漢人在香港聚居及受番禺縣管轄**。",
+          "【中原氏族南遷與文化承傳（頁 4，資料 1.4）】自北宋起，中原人士因躲避戰亂大量南遷。其中被稱為**「新界五大姓族」的鄧、侯、彭、廖、文**氏族人，先後於**宋、元、明時期**遷入香港新界定居，並保留中原傳統宗族文化：**興建祠堂（如屏山鄧氏宗祠）、書室，編修族譜**，崇尚儒家孝悌禮教，設館辦學以培養子弟參加朝廷**科舉考試**。",
+          "【課堂活動 1.1：三大法定古蹟印證領土管轄原則（頁 5）】\n① **西貢大廟灣刻石（南宋咸淳十年，1274 年）**：記載宋廷在九龍灣一帶設立**「官富鹽場」並派鹽官管理**及徵收鹽稅，印證**「政府管轄權」及「經濟管轄權」**。\n② **屏山聚星樓（明代洪武年間）**：由新界鄧族興建的香港唯一古塔（文塔），供奉魁星以保佑族人**考取科舉功名**，印證**「文化承傳」**。\n③ **東涌炮台（清代道光十二年，1832 年）**：清代**水師總部**，派兵駐守防範海盜與外敵入侵，印證**「駐軍權力」**。"
+        ],
+        tableData: {
+          title: "📊 資料 1.2：香港自秦朝納入版圖至 1842 年鴉片戰爭前的歷朝縣治沿革表",
+          headers: ["時期 / 朝代", "年份", "隸屬縣治（必背）", "重要歷史事件與古蹟實證"],
+          rows: [
+            ["**秦漢至東晉初期**", "**公元前 214 年 – 公元 330 年**", "**番禺縣**（南海郡）", "**前214年秦平定嶺南納入中國版圖**；1955年深水埗發現東漢**「李鄭屋漢墓」**"],
+            ["**東晉至唐中葉**", "**331 年 – 756 年**", "**寶安縣**", "縣治設於南頭；**《新唐書》載唐朝於屯門設軍鎮，駐兵二千多人**"],
+            ["**唐中葉至明中葉**", "**757 年 – 1572 年**", "**東莞縣**", "**宋代設官富鹽場派鹽官管理（1274年西貢大廟灣刻石）**；**新界五大姓族（鄧侯彭廖文）**陸續南遷"],
+            ["**明中葉至清鴉片戰爭前**", "**1573 年 – 1842 年**", "**新安縣**", "明代鄧族建**屏山聚星樓（科舉文化承傳）**；清代建**東涌炮台（1832年水師總部駐軍）**"]
+          ]
+        },
+        blanks: [
+          "考古發現證明，早在新石器時代，香港先民與珠江流域一帶的先民同屬【亞洲蒙古人種】，且香港與嶺南及中原地區同屬一個【文化系統】。",
+          "【公元前 214】年，【秦朝】平定嶺南，把香港正式納入中國版圖。自此至清代鴉片戰爭前，香港先後隸屬【番禺縣】、【寶安縣】、【東莞縣】和【新安縣】管轄。",
+          "《新唐書》記載唐朝已在【屯門】設軍鎮駐兵二千多人；宋明期間，新界【五大姓族】（鄧、侯、彭、廖、文）由中原南遷至香港定居，興建祠堂和書室，編修【族譜】，參加朝廷舉行的【科舉】考試。"
+        ],
+        qaItems: [
+          {
+            title: "課堂活動 1.1（頁 5）：根據西貢大廟灣刻石、屏山聚星樓及東涌炮台三項古蹟資料，說明它們如何印證香港自古以來是中國的領土。",
+            answer: "① **【政府管轄權與經濟管轄權】**：**西貢大廟灣刻石**（1274年）記載**南宋**時期朝廷在九龍灣一帶設置**「官富鹽場」並委派鹽官管理**食鹽產銷及稅收，證明當時中國中央政府對香港行使直接的**行政與經濟管轄權**。\n② **【文化承傳】**：元朗**屏山聚星樓**由南遷的新界鄧族於**明代**興建，用以保佑族人在朝廷**科舉考試中奪取功名**，反映香港居民**承傳中原儒家文化與科舉制度**。\n③ **【駐軍權力】**：大嶼山**東涌炮台**建於**清代道光年間（1832年）**，為**清廷水師總部**，派兵駐守海防以抵禦海盜及外敵，印證清政府在香港行使**國防與駐軍權力**。"
+          }
+        ],
+        resources: [
+          { name: "課本教材：CS_T1U1_AnsCheck_RMA.pdf（第 1–6 頁）", url: DRIVE_U1 },
+          { name: "Google Drive 教材總資料夾", url: DRIVE_FOLDER },
+          { name: "古物古蹟辦事處：香港法定古蹟（漢墓、聚星樓、大廟灣刻石）", url: "https://www.amo.gov.hk/tc/historic-buildings/monuments/index.html" },
+          { name: "教育局公民科自學教材：「一國兩制」下的香港", url: "https://cs.edb.edcity.hk/file/public/self_learning/sl_hkh_t_r2.pdf" }
+        ],
+        feynmanPrompt: "請向一位 12 歲學生解釋：為什麼《基本法》序言說「香港自古以來就是中國的領土」？請同時運用史前考古、歷朝四個縣治演變及三大古蹟的證據。",
+        keywords: ["蒙古人種", "番禺", "寶安", "東莞", "新安", "五大姓族", "屯門", "大廟灣刻石", "聚星樓", "東涌炮台"],
+        masterFeynman: "證明香港自古屬於中國就像「驗 DNA ＋ 查歷代戶口名簿 ＋ 查國家駐軍紀錄」：(1) **驗 DNA 與文化**：馬灣先民遺骸驗出是**亞洲蒙古人種**，新界**五大姓族（鄧侯彭廖文）**祠堂族譜直接記錄宋明時期從中原搬來，**屏山聚星樓**更見證族人考科舉的**文化承傳**；(2) **查戶口名簿（行政與經濟管轄）**：自**公元前 214 年秦始皇**起，香港一直歸屬縣政府管轄（**番禺 → 寶安 → 東莞 → 新安**），宋朝還在九龍灣設**官富鹽場**派鹽官管治（**西貢大廟灣刻石**）；(3) **查駐軍紀錄**：唐朝已在**屯門駐兵二千多人**，清朝更設**東涌炮台**作水師總部，證明中國歷朝對香港行使完整管治權。",
+        mnemonic: "歷朝四縣口訣：「**秦番（番禺）、晉寶（寶安）、唐東莞、明清叫新安**」；新界五大姓族：「**鄧侯彭廖文**」。",
+        quizzes: [
+          {
+            q: "1. 【時序題（頁 4）】香港自公元前 214 年納入秦朝版圖至 1842 年被英國侵佔前，先後隸屬哪四個縣管轄？",
+            options: [
+              "A. 寶安縣 → 番禺縣 → 東莞縣 → 新安縣",
+              "B. 番禺縣 → 寶安縣 → 東莞縣 → 新安縣",
+              "C. 番禺縣 → 東莞縣 → 寶安縣 → 新安縣",
+              "D. 新安縣 → 番禺縣 → 寶安縣 → 東莞縣"
+            ],
+            correct: 1,
+            explanation: "正確答案為 B（見 CS_T1U1 頁 4 資料 1.2）：**秦漢至東晉初期屬番禺縣，東晉至唐中葉屬寶安縣，唐中葉至明中葉屬東莞縣，明中葉至鴉片戰爭前屬新安縣**。"
+          },
+          {
+            q: "2. 【課堂活動 1.1（頁 5）】位於西貢的「大廟灣刻石」記載了哪個朝代設置「官富鹽場」並派鹽官管理的歷史？這主要反映哪項領土確認原則？",
+            options: [
+              "A. 唐朝；駐軍權力",
+              "B. 宋朝；經濟管轄權及政府管轄權",
+              "C. 明朝；文化承傳",
+              "D. 清朝；血緣關係"
+            ],
+            correct: 1,
+            explanation: "正確答案為 B（見 CS_T1U1 頁 5）：**宋廷於九龍灣岸設置官富鹽場並派鹽官管理，西貢大廟灣刻石印證了宋朝對香港的經濟管轄權與政府管轄權**。"
+          }
+        ]
+      },
+      {
+        id: 2,
+        ch: "Ch 1.2 上（頁 7–12）",
+        pdf: "CS_T1U1_AnsCheck_RMA.pdf",
+        title: "第 2 節：三條不平等條約與英國侵佔香港過程（1.2A）",
+        subtitle: "英國割佔港島原因（資料剖析）、《南京條約》、《北京條約》、《展拓香港界址專條》與國際法無效依據",
+        outcomes: "【預期學習成果】知識：掌握英國透過**三條不平等條約**分三步侵佔香港的**年份、戰爭與地理界線**；理解**不平等條約的四大特徵**及違反**《維也納條約法公約》第 51、52 條**的國際法依據。",
+        corePoints: [
+          "【資料剖析：英國割佔香港島的兩大原因（頁 8，資料 1.5、1.6）】\n① **經濟貿易因素**：清廷自 18 世紀中葉起實行**廣州「一口通商」**政策，對外商諸多限制。英國外相巴麥尊勳爵信件反映英商要求以**武力打開中國市場**，並奪取一個**受英國管治和法律保障的沿海島嶼**，作為對華**貿易基地與後勤補給據點**。\n② **地理環境因素**：香港**鄰近廣州，位處華南海岸航道要衝**，且維多利亞港**水深港闊、有天然山嶺屏障遮蔽**，不受冬季東北風和夏季西南季候風影響，是極佳的**天然深水良港**。",
+          "【第一步：1842 年《南京條約》割佔香港島（頁 7–9，資料 1.7）】\n• 背景：清廷派林則徐赴廣東禁煙（1839 年虎門銷煙），英國於 **1840 年發動「第一次鴉片戰爭」（1840–1842）**。1841 年 1 月英軍強行登陸香港島水坑口。\n• 條約內容：清廷戰敗，於 **1842 年 8 月 29 日**被迫簽訂中國近代史上第一條不平等條約——**《南京條約》，把「香港島」割讓予英國**。",
+          "【第二步：1860 年《北京條約》割佔界限街以南九龍半島（頁 9，資料 1.8）】\n• 背景：英、法兩國為進一步擴大在華侵略權益，於 **1856 年發動「第二次鴉片戰爭」（1856–1860）**。1860 年英法聯軍攻佔北京並**火燒圓明園**。\n• 條約內容：清廷被迫於 **1860 年 10 月 24 日**與英國簽訂**《北京條約》**，割讓「九龍司地方一區」，即**「九龍半島界限街以南地方及昂船洲」**。",
+          "【第三步：1898 年《展拓香港界址專條》強租新界 99 年（頁 10，資料 1.8、1.9）】\n• 背景：1894–1895 年**中日甲午戰爭**中國戰敗，列強在華掀起**瓜分中國狂潮**。英國以法國租借廣州灣危及香港安全為藉口向清廷施壓。\n• 條約內容：**1898 年 6 月 9 日**在北京簽訂**《展拓香港界址專條》**，自 **1898 年 7 月 1 日**起，**強行租借「界限街以北、深圳河以南的地區，以及附近 235 個島嶼和大鵬灣、深圳灣水域」（統稱「新界」），租期 99 年**（至 1997 年 6 月 30 日期滿）。\n• **新界六日戰**（頁 10 資料 1.9）：**1899 年 4 月**英國接管新界時，屏山、錦田、廈村等新界鄉民組織武裝抗英，爆發**「新界六日戰」**，英軍攻破錦田吉慶圍並拆走連環鐵門。",
+          "【不平等條約的四大特徵與國際法無效依據（頁 10–12，課堂活動 1.2）】\n• **不平等條約四大特徵**：① **締約過程以武力或武力威脅強迫簽訂**；② **締約國之間沒有對等的談判地位**；③ **條約內容（權利與義務）極不平等**（英國單方面攫取領土，中國毫無補償）；④ **明顯侵害國家主權或利益**。\n• **國際法無效依據**：\n  1. 聯合國 **1969 年《維也納條約法公約》第 51 條及第 52 條**（訂明**「以威脅或使用武力違反聯合國憲章所含國際法原則而獲締結之條約無效」**）；\n  2. 聯合國大會 **1974 年《關於侵略定義的決議》**（訂明**由侵略所得的領土或特殊利益不得被承認為合法**）。"
+        ],
+        tableData: {
+          title: "📊 英國侵佔香港三條不平等條約完整比較表（頁 7–11）",
+          headers: ["條約名稱（必背）", "簽署日期", "相關戰爭 / 歷史背景", "侵佔範圍與界線（必背）", "性質"],
+          rows: [
+            ["**《南京條約》**", "**1842年8月29日**", "**第一次鴉片戰爭**（1840–1842）清廷戰敗", "**香港島**", "武力強迫割讓"],
+            ["**《北京條約》**", "**1860年10月24日**", "**第二次鴉片戰爭**（1856–1860）英法聯軍攻陷北京、火燒圓明園", "**九龍半島界限街以南地方及昂船洲**", "武力強迫割讓"],
+            ["**《展拓香港界址專條》**", "**1898年6月9日**（7月1日生效）", "**甲午戰敗後列強瓜分中國狂潮**；英藉口法國租廣州灣威脅香港", "**界限街以北、深圳河以南地區及附近 235 個島嶼與大鵬灣、深圳灣水域（新界）**", "**武力威脅強租 99 年**（引發 1899 新界六日戰）"]
+          ]
+        },
+        blanks: [
+          "1840 年英國發動第一次鴉片戰爭，清廷戰敗後於【1842】年被迫簽訂《【南京條約】》，割讓【香港島】。",
+          "1856 年英法聯軍發動第二次鴉片戰爭，清廷於【1860】年被迫簽訂《【北京條約】》，割讓【界限街】以南的九龍半島及【昂船洲】。",
+          "1898 年英國趁列強瓜分中國，迫使清廷簽訂《【展拓香港界址專條】》，強行租借界限街以北、【深圳河】以南地區及附近【235】個島嶼，為期【99】年。",
+          "根據聯合國 1969 年《【維也納條約法公約】》第 51 及 52 條，以威脅或使用【武力】而締結的條約無法律效果。"
+        ],
+        qaItems: [
+          {
+            title: "資料剖析（頁 8）：根據資料 1.5 及 1.6，指出及說明英國在第一次鴉片戰爭中要求割佔香港島的兩個原因。",
+            answer: "① **【經濟與貿易原因】**：清政府於 18 世紀中葉起實施**廣州「一口通商」**，限制外商在華貿易。英國外相巴麥尊信件顯示，英國希望奪取一個**由英國管治、受英國法律保護的島嶼，作為對華貿易基地及商船補給據點**，以擺脫清廷管制並打開中國市場。\n② **【地理與環境原因】**：香港**鄰近貿易中心廣州，位處華南沿岸航道要衝**；加上香港**水深港闊，四周有山嶺作為天然屏障**，不受冬季東北季候風和夏季西南季候風影響，具備**優良深水港**條件。"
+          },
+          {
+            title: "課堂活動 1.2（頁 11）：為什麼說《南京條約》、《北京條約》和《展拓香港界址專條》屬於不平等條約？試從締約過程和條約內容加以說明。",
+            answer: "① **【締約過程以武力或威脅強迫，談判地位不對等】**：《南京條約》和《北京條約》均是英國發動兩次鴉片戰爭擊敗清廷、**以武力強迫簽訂**；《展拓香港界址專條》則是趁甲午戰敗列強瓜分之際**以武力威脅迫簽**，違反**《維也納條約法公約》第 51、52 條**。\n② **【條約內容（權利與義務）極不平等，侵害中國主權】**：三條條約使**英國單方面無償取得香港島、九龍及強租新界 99 年**（新界租借不設租金），**中國主權與領土完整遭到嚴重侵害，卻沒有獲得任何對等權利或補償**。"
+          }
+        ],
+        resources: [
+          { name: "課本教材：CS_T1U1_AnsCheck_RMA.pdf（第 7–12 頁）", url: DRIVE_U1 },
+          { name: "教育局公民科網上資源平台：主題1教師投影片", url: "https://cs.edb.edcity.hk/tc/ppt_for_teachers_cs.php" }
+        ],
+        feynmanPrompt: "請向 12 歲學生解釋：英國分哪三步侵佔整個香港？為什麼這三條條約在國際法上是無效的「不平等條約」？",
+        keywords: ["南京條約", "香港島", "北京條約", "界限街", "展拓香港界址專條", "九十九年", "武力", "不對等", "主權", "維也納條約法公約"],
+        masterFeynman: "英國侵佔香港分三步（**1842《南京條約》割香港島** → **1860《北京條約》割界限街以南九龍及昂船洲** → **1898《展拓香港界址專條》強租新界及 235 個島嶼 99 年**）。這就像強盜拿著槍（**武力威脅、談判地位不對等**）逼屋主把客廳、飯廳白白送人，再把後花園免租霸佔 99 年（**權利義務極不平等、侵害國家主權**）。根據 **1969 年聯合國《維也納條約法公約》第 51 及 52 條**，用武力脅迫簽署的條約**自始無效**！",
+        mnemonic: "「**42 南京割港島、60 北京南九龍、98 專條租新界（99 年）**」；不平等四特徵：「**武力逼簽、地位不等、權責失衡、侵害主權**」。",
+        quizzes: [
+          {
+            q: "1. 【課堂活動 1.2（頁 11）】1860 年《北京條約》與 1898 年《展拓香港界址專條》所涉及的地理界線分別是什麼？",
+            options: [
+              "A. 兩者皆以深圳河為界",
+              "B. 前者割佔界限街以南九龍半島及昂船洲；後者強租界限街以北、深圳河以南地區及附近 235 個島嶼",
+              "C. 前者強租新界 99 年；後者割佔香港島",
+              "D. 前者割佔整個九龍及新界；後者只租借大嶼山"
+            ],
+            correct: 1,
+            explanation: "正確答案為 B（見 CS_T1U1 頁 9–10）：**1860年《北京條約》割讓界限街以南的九龍半島及昂船洲；1898年《展拓香港界址專條》強租界限街以北、深圳河以南地區及附近235個島嶼，為期99年**。"
+          },
+          {
+            q: "2. 【詞彙解讀（頁 10）】聯合國哪一份國際公約明確規定「違反聯合國憲章所含國際法原則、以威脅或使用武力而獲締結的條約無效」？",
+            options: [
+              "A. 1969 年《維也納條約法公約》（第 51 及 52 條）",
+              "B. 1984 年《中英聯合聲明》",
+              "C. 1949 年《共同綱領》",
+              "D. 1895 年《馬關條約》"
+            ],
+            correct: 0,
+            explanation: "正確答案為 A（見 CS_T1U1 頁 10）：**聯合國於 1969 年訂立的《維也納條約法公約》第 51 及 52 條規定以威脅或武力締結的條約無法律效果**。"
+          }
+        ]
+      },
+      {
+        id: 3,
+        ch: "Ch 1.2 下（頁 12–14）",
+        pdf: "CS_T1U1_AnsCheck_RMA.pdf",
+        title: "第 3 節：中國對不平等條約的立場與 1972 年剔出殖民地名單（1.2B）",
+        subtitle: "建國初期「長期打算，充分利用」八字方針與 1972 年聯合國除名的兩大國際法意義",
+        outcomes: "【預期學習成果】知識：理解新中國成立後對香港問題的**「長期打算，充分利用」**方針；掌握 **1972 年聯合國將香港剔出殖民地名單**的兩大國際法意義（**不適用民族自決與獨立、確認主權歸屬中國**）。",
+        corePoints: [
+          "【建國初期外交方針與對不平等條約的立場（頁 12–13）】\n• 1949 年新中國成立前夕，中共中央提出**「另起爐灶」**與**「打掃乾淨屋子再請客」**兩大外交方針，並寫入**《中國人民政治協商會議共同綱領》**，宣布廢除一切不平等條約。\n• 對香港的堅定立場：**新中國政府一貫堅持香港是中國的領土，不承認英國強加的三條不平等條約**。",
+          "【「長期打算，充分利用」八字方針（頁 13）】\n• 內涵：對於歷史遺留下來的香港問題，主張**在條件成熟時通過和平談判方式解決；在未解決以前暫時維持現狀**。\n• 原因：新中國成立初期面對西方陣營政治孤立、經濟封鎖與禁運。暫時維持香港現狀，可**利用香港作為國際自由港的特殊地位，作為中國突破封鎖、發展海外貿易、引進物資與賺取外匯的重要窗口**。",
+          "【1972 年聯合國把香港剔出殖民地名單（頁 13–14，資料 1.10，必考重點）】\n• 背景：**1971 年 10 月**，第 26 屆聯合國大會通過第 2758 號決議，**恢復中華人民共和國在聯合國的一切合法席位**。\n• **1972 年 3 月**，中國常駐聯合國代表黃華致函聯合國非殖民化特別委員會主席，嚴正聲明：**「香港、澳門是英國和葡萄牙當局佔領的中國領土的一部分，解決香港、澳門問題完全是屬於中國主權範圍內的問題，根本不屬於通常所謂『殖民地』範疇。」**\n• **1972 年 11 月 8 日**，第 27 屆聯合國大會通過決議，**正式將香港和澳門從「殖民地名單」（非自治領土列表）中剔除**。",
+          "【剔出殖民地名單的兩大國際法意義（頁 14，必背！）】\n① **確認香港不具殖民地地位**：雖然香港曾受英國殖民管治，但在國際法上並非殖民地；因此 1960 年聯合國反殖宣言中關於殖民地**「民族自決」和「獨立」的原則，絕對不適用於香港**。\n② **確認香港主權歸屬於中國**：國際社會公認香港問題純屬中國主權範圍內的事，**中國政府在甚麼時間、以甚麼方式解決香港問題和恢復行使主權，完全由中國自主決定**，成為日後解決香港問題的國際法依據。"
+        ],
+        tableData: {
+          title: "📊 概念釐清：「受英國殖民管治」與「國際法上的殖民地」之本質區別（頁 13–14）",
+          headers: ["比較維度", "一般國際法上的「殖民地」", "1997 年前的香港（受英國殖民管治的中國領土）"],
+          rows: [
+            ["主權歸屬", "原無統一主權國家或主權完全喪失", "**自古以來屬於中國領土，中國從未承認三條不平等條約，主權始終屬於中國**"],
+            ["聯合國名單地位", "列入聯合國「非自治領土（殖民地）名單」", "**1972年11月8日經聯合國大會決議正式從殖民地名單中剔除**"],
+            ["解決方式與前途", "適用1960年反殖宣言，可透過「民族自決」走向「獨立」", "**絕不適用「民族自決」或「獨立」；純屬中國主權範圍內事務，由中國自主收回**"]
+          ]
+        },
+        blanks: [
+          "1949 年新中國成立後，不承認有關香港的三條【不平等條約】，並對香港採取「【長期打算】，【充分利用】」的方針，主張在條件成熟時通過【談判】方式解決香港問題。",
+          "【1972】年，中國政府致函聯合國非殖民化特別委員會，指出香港和澳門是被英、葡佔領的中國領土，解決港澳問題完全屬於【中國主權】範圍內的問題，不屬於通常所謂「【殖民地】」範疇。",
+          "同年聯合國大會通過決議把香港和澳門從殖民地名單中刪除，從國際法層面確認香港不具殖民地地位，故聯合國處理殖民地問題的「【民族自決】」和「【獨立】」並不適用於香港。"
+        ],
+        qaItems: [
+          {
+            title: "核心辨析題（頁 13–14）：有人認為「香港在 1997 年前由英國管治，因此屬於殖民地，香港居民有權透過公投實行民族自決。」試根據史實與國際法反駁此謬誤。",
+            answer: "此觀點完全錯誤：\n① **【不平等條約無效，主權始終屬華】**：英國是透過三條違反國際法（**《維也納條約法公約》第 51、52 條**）的不平等條約武力侵佔香港，中國政府**從未承認不平等條約，香港主權始終屬於中國**，只是暫受英國殖民管治。\n② **【1972 年聯合國決議確認非殖民地】**：**1972 年聯合國大會已通過決議將香港和澳門從「殖民地名單」中剔除**，在國際法上**確認香港不具殖民地地位**，因此聯合國賦予殖民地的**「民族自決」或「公投獨立」絕對不適用於香港**，香港問題純屬中國主權範圍內事務。"
+          }
+        ],
+        resources: [
+          { name: "課本教材：CS_T1U1_AnsCheck_RMA.pdf（第 12–14 頁）", url: DRIVE_U1 },
+          { name: "教育局：《公民與社會發展科課程及評估指引(中四至中六)》", url: "https://www.edb.gov.hk/attachment/tc/curriculum-development/renewal/CS/CS_CAG_S4-6_Chi_2021.pdf" }
+        ],
+        feynmanPrompt: "請向 12 歲學生解釋：為什麼說「香港曾經受英國殖民管治，但香港從來不是國際法上的殖民地，也不能搞民族自決」？",
+        keywords: ["長期打算", "充分利用", "1972", "聯合國", "殖民地名單", "民族自決", "獨立", "主權範圍"],
+        masterFeynman: "想像你家的房間被強盜霸佔了，房間雖然暫時被強盜管理，但**產權（主權）依然是你的**，不是無主的荒地。1949 年新中國成立後決定**「長期打算，充分利用」**，保留香港窗口做進出口貿易；到了 **1972 年，聯合國大會正式通過決議把香港和澳門從「殖民地名單」中剔除**，這在國際法上蓋章認證：(1) **香港是中國領土，不具殖民地地位，因此「民族自決」或「獨立」完全不適用**；(2) **香港問題純屬中國主權範圍內事務**！",
+        mnemonic: "1949 八字方針：「**長期打算，充分利用**」；1972 聯合國除名兩意義：「**非殖民地（不適用自決獨立）、屬中國主權（自主決定收回）**」。",
+        quizzes: [
+          {
+            q: "1. 【課節重溫（頁 14）】1972 年聯合國大會通過決議將香港和澳門從殖民地名單中刪除，這項決議帶來什麼直接的國際法效果？",
+            options: [
+              "A. 允許香港居民透過全民公投決定是否獨立",
+              "B. 確認香港不具殖民地地位，聯合國處理殖民地的「民族自決」和「獨立」不適用於香港",
+              "C. 規定英國必須於 1972 年年底前撤出香港",
+              "D. 將香港交由聯合國託管委員會直接管治"
+            ],
+            correct: 1,
+            explanation: "正確答案為 B（見 CS_T1U1 頁 14）：**聯合國將香港從殖民地名單除名，確認香港不具殖民地地位，故民族自決和獨立不適用於香港，且確認香港主權歸屬中國**。"
+          },
+          {
+            q: "2. 【建國初期方針（頁 13）】1949 年新中國成立初期，中央政府對解決香港問題採取哪八字方針？",
+            options: [
+              "A. 立即收回，全面改造",
+              "B. 長期打算，充分利用",
+              "C. 主權換治，維持現狀",
+              "D. 國際共管，自由貿易"
+            ],
+            correct: 1,
+            explanation: "正確答案為 B（見 CS_T1U1 頁 13）：**新中國採取「長期打算，充分利用」方針，在條件成熟時以談判解決，未解決前利用香港特殊地位發展外貿**。"
+          }
+        ]
+      },
+      {
+        id: 4,
+        ch: "Ch 1.3 上（頁 15–18）",
+        pdf: "CS_T1U1_AnsCheck_RMA.pdf",
+        title: "第 4 節：中英談判、《中英聯合聲明》與「一國兩制」入憲（1.3A–1.3B）",
+        subtitle: "1982 鄧小平三大立場、駁斥「主權換治權」、1984《中英聯合聲明》與 1982《憲法》第 31 條",
+        outcomes: "【預期學習成果】知識：掌握 **1982 年鄧小平三大基本立場**、反駁**「主權換治權」**、**1984 年 12 月 19 日簽署《中英聯合聲明》**，以及**「一國兩制」寫入 1982 年《憲法》第 31 條**的最高憲制地位。",
+        corePoints: [
+          "【1.3A 中英談判背景與 1982 年鄧小平三大基本立場（頁 15–16，資料 1.11）】\n• 背景：因 **1997 年新界地契屆滿**影響投資者信心，1979 年 3 月港督麥理浩訪京；**1982 年 9 月**英國首相**戴卓爾夫人**訪華與**鄧小平**會談，正式展開中英談判。\n• **鄧小平在會談中闡明的三大基本立場**：\n  ① **關於主權問題：主權問題不是一個可以討論的問題，中國在 1997 年要收回的不僅是新界，而是包括香港島、九龍在內的整個香港**；\n  ② **關於 1997 後的制度：中國將宣布 1997 年收回香港後實行的制度和政策，以繼續保持香港的繁榮**；\n  ③ **關於 15 年過渡期：中英雙方應妥善商談 15 年過渡期安排，避免香港出現大的波動；如果發生嚴重的人為波動，中國政府將被迫對收回的時間和方式另作考慮**。",
+          "【駁斥「主權換治權」與簽署《中英聯合聲明》（頁 16–17，資料 1.12）】\n• 駁斥「主權換治權」：英方起初堅持「三個條約有效論」，後退而提出**「以主權換治權」**（承認中國名義主權，換取英國 1997 後繼續管治香港）。中國政府堅決拒絕，強調**「主權與治權不可分割」**。\n• 簽署聲明：經過 **22 輪談判**，中英兩國於 **1984 年 12 月 19 日**在北京由趙紫陽與戴卓爾夫人正式簽署**《中英聯合聲明》**。\n• 核心內容：確定中華人民共和國政府於 **1997 年 7 月 1 日對香港恢復行使主權**，並闡明對香港的十二條基本方針政策（設立特別行政區、港人治港、高度自治、資本主義制度和生活方式**五十年不變**）。**《中英聯合聲明》的簽訂標誌着香港問題得以和平解決**。",
+          "【1.3B「一國兩制」的提出與寫入《憲法》第 31 條（頁 17–18，資料 1.13）】\n• 「一國兩制」的提出：由**鄧小平**提出，**原本是為和平解決台灣問題而提出，但實際上首先在解決香港問題上得到成功實踐**。\n• 寫入**《憲法》第 31 條**：**1982 年 12 月 4 日**，第五屆全國人民代表大會第五次會議通過新修訂的《中華人民共和國憲法》，增寫**第三十一條：「國家在必要時得設立特別行政區。在特別行政區內實行的制度按照具體情況由全國人民代表大會以法律規定。」**\n• 法理意義：**《憲法》第 31 條把「一國兩制」確立為國家基本國策，為設立香港特別行政區及制定《基本法》提供了最高憲制依據**。"
+        ],
+        tableData: {
+          title: "📊 中英談判與「一國兩制」入憲關鍵里程碑（頁 15–18）",
+          headers: ["年份 / 日期（必背）", "關鍵歷史事件", "核心內容與法理意義（必背）"],
+          rows: [
+            ["**1979 年 3 月**", "港督麥理浩訪京", "因 1997 新界地契屆滿問題試探中方；鄧小平表明 **1997 收回香港**並派定心丸"],
+            ["**1982 年 9 月**", "戴卓爾夫人訪華，中英談判開始", "鄧小平闡明三大立場：**主權不容討論（收回整個香港）、制度保繁榮、15年過渡防波動**"],
+            ["**1982 年 12 月 4 日**", "五屆全國人大五次會議修訂《憲法》", "**增寫《憲法》第 31 條，為設立特別行政區及實行「一國兩制」提供最高憲制依據**"],
+            ["**1984 年 12 月 19 日**", "經 22 輪談判簽署**《中英聯合聲明》**", "**確定 1997 年 7 月 1 日中國恢復對香港行使主權，標誌香港問題得以和平解決**"]
+          ]
+        },
+        blanks: [
+          "1982 年 9 月中英談判展開，鄧小平表明【主權】問題不是一個可以討論的問題，並拒絕英方提出「【以主權換治權】」的主張，強調主權與【治權】不可分割。",
+          "經過 22 輪談判，中英兩國於【1984】年 12 月 19 日正式簽署《【中英聯合聲明】》，確定中國於【1997】年 7 月 1 日對香港恢復行使主權。",
+          "「一國兩制」構想由【鄧小平】提出，原為和平解決【台灣】問題而設，但首先在【香港】問題上付諸實踐。",
+          "1982 年 12 月 4 日，第五屆全國人大五次會議通過《中華人民共和國憲法》，當中【第三十一】條訂明國家在必要時得設立【特別行政區】，為實行「一國兩制」提供最高【憲制】依據。"
+        ],
+        qaItems: [
+          {
+            title: "重點問答（頁 16–18）：中英談判期間，英方曾提出「以主權換治權」，中方為何堅決反對？國家又如何透過憲制安排消除港人對 1997 年後的疑慮？",
+            answer: "① **【反對「主權換治權」的原因】**：主權是國家對管轄區域至高無上的政治權力，而**治權（管治權）是主權的具體體現，主權與治權不可分割**。若只有名義主權而無實質治權，無異於延續殖民管治，因此鄧小平明確指出**「主權問題不容討論」**。\n② **【消除港人疑慮的憲制安排】**：國家於 **1982 年 12 月修改《憲法》增寫第 31 條**，以國家根本法確立設立特別行政區的制度；並於 **1984 年《中英聯合聲明》及 1990 年《基本法》**中，將**「一國兩制」、「港人治港」、高度自治及保持原有資本主義制度和生活方式五十年不變**以法律形式規定下來，全面釋除投資者與市民疑慮。"
+          }
+        ],
+        resources: [
+          { name: "課本教材：CS_T1U1_AnsCheck_RMA.pdf（第 15–18 頁）", url: DRIVE_U1 },
+          { name: "政制及內地事務局：《中英聯合聲明》全文", url: "https://www.cmab.gov.hk/tc/issues/jd2.htm" }
+        ],
+        feynmanPrompt: "請向 12 歲學生解釋：中英談判時英國提出的「主權換治權」是什麼意思？鄧小平如何反駁？國家又如何用《憲法》第 31 條為「一國兩制」提供最高法律保障？",
+        keywords: ["主權問題", "主權換治權", "不可分割", "22輪", "1984", "中英聯合聲明", "台灣問題", "第三十一條", "資本主義"],
+        masterFeynman: "英國當年在談判桌上想玩「名義歸你、實權歸我」的把戲（**主權換治權**），就像說「屋契寫回你的名字，但收租和管理權繼續歸我」。鄧小平直接表明：**主權問題不容討論，而且主權與治權不可分割**！同時，為了讓香港人安心，國家在 **1982 年 12 月 4 日修改《憲法》增寫第 31 條**，規定國家可設立特別行政區並由全國人大以法律規定其制度，再於 **1984 年 12 月 19 日簽署《中英聯合聲明》**，承諾香港回歸後**保留資本主義制度和生活方式五十年不變**。",
+        mnemonic: "**1982.9 談判三立場（主權不討論、制度保繁榮、過渡防波動） → 1982.12.4《憲法》第 31 條入憲 → 1984.12.19 簽署《中英聯合聲明》**。",
+        quizzes: [
+          {
+            q: "1. 【概念辨析（頁 18）】關於「一國兩制」構想的提出與入憲，下列哪一項描述是正確的？",
+            options: [
+              "A. 原為解決香港問題而提出，後推廣至台灣問題",
+              "B. 原為和平解決台灣問題而設，但實際上首先在香港問題上實踐，並於 1982 年獲《憲法》第 31 條確認",
+              "C. 於 1990 年通過《基本法》時才首次寫入《中華人民共和國憲法》",
+              "D. 允許特別行政區自行修改國家《憲法》"
+            ],
+            correct: 1,
+            explanation: "正確答案為 B（見 CS_T1U1 頁 18）：**「一國兩制」原為和平解決台灣問題而設，首先在香港實踐；1982年12月4日五屆全國人大五次會議修憲增寫《憲法》第31條確立為基本國策**。"
+          },
+          {
+            q: "2. 【鄧小平談話（頁 16）】1982 年鄧小平會見戴卓爾夫人時指出，若 15 年過渡期內香港發生嚴重的人為波動，中國政府將會如何應對？",
+            options: [
+              "A. 將過渡期延長 50 年",
+              "B. 被迫對收回香港的時間和方式另作考慮",
+              "C. 交由聯合國安全理事會仲裁",
+              "D. 同意與英國共同管治香港"
+            ],
+            correct: 1,
+            explanation: "正確答案為 B（見 CS_T1U1 頁 16 資料 1.11）：**鄧小平明確表示，如果過渡期內製造嚴重波動，中國政府將被迫對收回的時間和方式另作考慮**。"
+          }
+        ]
+      },
+      {
+        id: 5,
+        ch: "Ch 1.3 下（頁 19–24）",
+        pdf: "CS_T1U1_AnsCheck_RMA.pdf",
+        title: "第 5 節：《基本法》制定頒布、特區成立與能力評估 1.1（1.3C–1.3D）",
+        subtitle: "草委會（59人）與諮委會（180人）、兩輪諮詢（8萬份意見）、1990頒布《基本法》、1997特區成立及能力評估 1.1",
+        outcomes: "【預期學習成果】知識：掌握《基本法》起草（**草委會59人、諮委會180人、兩輪諮詢近8萬份意見**）、**1990年4月4日頒布**及**1997年7月1日實施**的歷程；掌握論證**「一國兩制」對國家和香港積極意義**的滿分答題框架。",
+        corePoints: [
+          "【1.3C《基本法》的起草、廣泛諮詢與頒布（頁 19–20，資料 1.14）】\n• 成立**基本法起草委員會（草委會）**：**1985 年 4 月**，第六屆全國人大三次會議決定成立草委會。**委員共 59 人，其中內地委員 36 人、香港委員 23 人**。\n• 成立**基本法諮詢委員會（諮委會）**：**1985 年 12 月**，在香港成立由 **180 名香港各界代表**組成的諮委會，是香港有史以來最具規模和廣泛代表性的諮詢組織。\n• **兩次廣泛公眾諮詢**：草委會先後於 **1988 年 4 月**及 **1989 年 2 月**展開兩次大規模公開諮詢，**共收到近 8 萬份意見和建議**，對草案作出百多處修改。\n• **正式通過與頒布**：歷時 **4 年零 8 個月**，**1990 年 4 月 4 日**由**第七屆全國人民代表大會第三次會議**正式通過**《中華人民共和國香港特別行政區基本法》**（連同三個附件）及香港特區區旗、區徽圖案。",
+          "【1.3D 香港特別行政區的籌備與成立（頁 21，資料 1.15）】\n• 過渡期籌備機構：全國人大常委會於 1993 年 7 月成立**「預委會」**；1996 年 1 月成立**「籌委會」**，籌組由 400 名香港永久性居民組成的「第一屆政府推選委員會」（選出董建華為首任行政長官）。\n• 政權交接與特區成立：**1997 年 7 月 1 日**，中華人民共和國正式**對香港恢復行使主權，香港特別行政區正式成立，《基本法》同步生效實施**。",
+          "【能力評估 1.1 必考資料題全解析（頁 22–24）】\n• 資料 A：1982 年 9 月鄧小平與戴卓爾夫人會談紀錄（**主權不容討論、1997 收回整個香港、保持香港繁榮的制度政策**）。\n• 資料 B：《基本法》序言及第 1、2、5 條（**維護國家統一和領土完整，保持香港繁榮和穩定；不在香港實行社會主義制度和政策，保持原有的資本主義制度和生活方式，五十年不變**）。\n• 資料 C：鄧小平文選及江澤民於 1997 年交接儀式講話（**「一國兩制」既維護國家主權統一，又照顧香港歷史和現實，並為國際社會以和平方式解決歷史遺留問題和國際爭端提供新範例**）。"
+        ],
+        tableData: {
+          title: "📊 《基本法》制定與香港特區成立關鍵時序表（頁 19–21）",
+          headers: ["時間（必背）", "機構 / 里程碑", "關鍵數據與內容（必背）"],
+          rows: [
+            ["**1985 年 4 月**", "成立**「基本法起草委員會」（草委會）**", "**共 59 名委員（內地委員 36 人 ＋ 香港各界委員 23 人）**"],
+            ["**1985 年 12 月**", "成立**「基本法諮詢委員會」（諮委會）**", "由 **180 名香港各界人士**組成，香港史上最具規模和代表性的諮詢組織"],
+            ["**1988年4月 及 1989年2月**", "**兩次大型公眾諮詢**", "廣泛收集民意，**共收到近 8 萬份意見和建議**，修改百多處"],
+            ["**1990 年 4 月 4 日**", "七屆全國人大三次會議**通過並頒布《基本法》**", "歷時 **4 年零 8 個月**完成；同日通過區旗、區徽圖案"],
+            ["**1993 年 及 1996 年**", "先後成立**「預委會」及「籌委會」**", "籌備成立特區具體事宜，推委會選出首任特首"],
+            ["**1997 年 7 月 1 日**", "**香港回歸祖國，香港特別行政區成立**", "**中國對香港恢復行使主權，《基本法》正式生效實施**"]
+          ]
+        },
+        blanks: [
+          "1985 年全國人大成立「【基本法起草委員會】」（共 59 人，當中香港委員佔【23】人），並在香港成立「【基本法諮詢委員會】」廣泛收集港人意見。",
+          "經過 1988 年及 1989 年兩次公眾諮詢、收集近【8 萬】份意見後，第七屆全國人大三次會議於【1990】年 4 月 4 日正式通過《基本法》。",
+          "中央先後成立「【預委會】」和「【籌委會】」處理成立特區的準備工作。1997 年【7】月【1】日，中國對香港恢復行使主權，香港特別行政區正式成立，《基本法》開始實施。"
+        ],
+        qaItems: [
+          {
+            title: "能力評估 1.1 題 (a) 及 題 (b)（頁 23）：選擇題標準答案",
+            answer: "• 題 (a)：以下哪項文件的簽訂，標誌着香港問題得以和平解決？\n  **【答案】：B. 《中英聯合聲明》**\n• 題 (b)：根據資料 A，以下哪些描述是正確的？(1) 中國一直擁有香港的主權，要在 1997 年收回香港 (2) 英國認為三條條約仍然有效，期望在 1997 年後繼續管治香港 (3) 為保持香港的穩定與繁榮，中國可與英國討論香港的主權問題\n  **【答案】：A. 只有 (1) 和 (2)**（註：**主權問題不容討論**，故 (3) 錯誤）。"
+          },
+          {
+            title: "能力評估 1.1 題 (c)（頁 23–24）：「『一國兩制』方針的落實對國家和香港的發展皆有積極意義。」根據以上資料，提出兩個論據以證明這個說法。",
+            answer: "① **【論據一：對國家發展的積極意義（維護國家統一與提供國際範例）】**：\n根據資料 A 及資料 B，「一國兩制」方針讓國家於 **1997 年 7 月 1 日順利以和平方式收回香港，實現維護國家主權、統一和領土完整的目標**；同時，根據資料 C，「一國兩制」在香港的成功實踐，**不但為收回澳門及和平解決台灣問題作出示範，更為國際社會以和平談判方式解決國家間歷史遺留問題及國際爭端提供了新範例**。\n② **【論據二：對香港發展的積極意義（保持制度穩定與經濟繁榮）】**：\n根據資料 A 及資料 B，在「一國兩制」及《基本法》保障下，香港特區**實行「港人治港」、高度自治，保持原有的資本主義制度、法律制度和生活方式五十年不變**。這充分照顧了香港的歷史和現實情況，有助**釋除香港市民及投資者的疑慮，保持香港社會穩定與經濟持續繁榮**。"
+          }
+        ],
+        resources: [
+          { name: "課本教材：CS_T1U1_AnsCheck_RMA.pdf（第 19–24 頁）", url: DRIVE_U1 },
+          { name: "《基本法》官方網站：基本法簡介與制定背景", url: "https://www.basiclaw.gov.hk/tc/basiclaw/facts.html" }
+        ],
+        feynmanPrompt: "請向 12 歲學生解釋：《基本法》是如何用近五年時間制定出來的？為什麼說落實「一國兩制」與《基本法》對國家和香港是「雙贏」？",
+        keywords: ["起草委員會", "59人", "諮詢委員會", "八萬份", "1990年4月4日", "1997年7月1日", "領土完整", "澳門", "台灣", "繁榮穩定"],
+        masterFeynman: "《基本法》不是關起門寫出來的，而是由 **59 人起草委員會（當中 23 人是香港委員）**加上香港最具代表性的**基本法諮詢委員會（180 人）**，經過 1988 和 1989 年**兩輪大型公眾諮詢、收集近 8 萬份香港市民意見**後，於 **1990 年 4 月 4 日通過**的「特區制度保證書」，並於 **1997 年 7 月 1 日生效**。它實現了雙贏：對國家而言，和平收回香港維護了**主權與領土完整**，更為**澳門和台灣**提供範例；對香港而言，保留資本主義與原有生活方式 50 年不變，確保長期**繁榮穩定**。",
+        mnemonic: "「**85 起草（內地 36＋香港 23＝59 人）、兩輪諮詢（近 8 萬份意見）、90 年 4 月 4 日頒布、97 年 7 月 1 日生效**」。",
+        quizzes: [
+          {
+            q: "1. 【能力評估 1.1（頁 23 題 a）】以下哪項文件的簽訂，標誌着香港問題得以和平解決？",
+            options: [
+              "A. 《香港基本法》",
+              "B. 《中英聯合聲明》",
+              "C. 《聯合國非自治領土列表》",
+              "D. 《中英關於取消英國在華治外法權及其有關特權條約》"
+            ],
+            correct: 1,
+            explanation: "正確答案為 B（見 CS_T1U1 頁 18 及頁 23）：**1984年12月19日簽署《中英聯合聲明》標誌着中英兩國成功以協商方式和平解決香港問題**。"
+          },
+          {
+            q: "2. 【能力評估 1.1（頁 23 題 b）】根據資料 A（1982 年中英會談紀錄），以下哪些描述是正確的？(1) 中國一直擁有香港的主權，要在 1997 年收回香港 (2) 英國認為三條條約仍然有效，期望在 1997 年後繼續管治香港 (3) 為保持香港的穩定與繁榮，中國可與英國討論香港的主權問題",
+            options: [
+              "A. 只有 (1) 和 (2)",
+              "B. 只有 (1) 和 (3)",
+              "C. 只有 (2) 和 (3)",
+              "D. (1)、(2) 和 (3)"
+            ],
+            correct: 0,
+            explanation: "正確答案為 A（見 CS_T1U1 頁 22–23）：**鄧小平明確申明「主權問題不是一個可以討論的問題」，故 (3) 錯誤**。"
+          }
+        ]
+      },
+      {
+        id: 6,
+        ch: "Ch 2.1（課題二 頁 1–7）",
+        pdf: "CS_T1U2_AnsCheck_RMA.pdf",
+        title: "第 6 節：《憲法》、《基本法》與「一國兩制」的法理關係",
+        subtitle: "2.1A《憲法》最高地位（母法）、2.1B《基本法》授權法（子法）、2.1C「一國」是「兩制」的前提和基礎",
+        outcomes: "【預期學習成果】知識：認識**《憲法》和《基本法》共同構成香港特區的憲制基礎**；掌握**《憲法》（母法，最高法律效力，全國適用）**與**《基本法》（子法、授權法、特區憲制性法律）**的關係，以及**「一國」是「兩制」的前提和基礎**。",
+        corePoints: [
+          "【2.1A《憲法》的地位和法律效力（頁 3–4，資料 2.1、2.2）】\n① **國家的根本法（母法）與最高法律效力**：《中華人民共和國憲法》（現行《憲法》於 **1982 年 12 月 4 日**通過；每年 **12 月 4 日為「國家憲法日」**）是國家的**根本法**，具有**最高的法律地位、法律權威和法律效力**（《憲法》序言及第 5 條）。\n② **一切法律的立法依據**：《憲法》是制定其他所有法律（包括《基本法》）的立法依據，**一切法律、行政法規和地方性法規都不得同《憲法》相抵觸**。\n③ **在全國範圍（包括香港特區）適用**：《憲法》效力覆蓋**包括香港特別行政區和澳門特別行政區在內的全國範圍**。\n④ **與《基本法》共同構成香港特區的憲制基礎**：**《憲法》第 31 條**（國家在必要時得設立特別行政區）及**第 62 條第 14 款**（全國人大決定特別行政區的設立及其制度）是設立香港特區及制定《基本法》的直接依據。",
+          "【2.1B《基本法》的地位和法律依據（頁 5，資料 2.3）】\n① **屬全國性法律**：由**全國人民代表大會**根據《憲法》制定並通過，屬於**全國性法律**，既在香港特區實施，全國各地方、各部門也必須遵守。\n② **屬地位低於《憲法》的「子法」及「授權法」**：**《憲法》是「母法」，《基本法》是根據《憲法》派生的「子法」**；同時是全國人大授予香港特區實行高度自治權的**「授權法」**。\n③ **香港特區的憲制性法律**：根據《基本法》**第 8 條及第 11 條**，香港原有法律及香港特區立法機關制定的任何法律，**均不得同《基本法》相抵觸**。",
+          "【2.1C「一國兩制」的內涵與法理關係（頁 6–7，資料 2.4）】\n• **「一國」的含意**：香港特別行政區是**國家不可分離的部分（第 1 條）**，是**直轄於中央人民政府、享有高度自治權的地方行政區域（第 12 條）**。\n• **「兩制」的含意**：在「一國」的前提下，**國家主體堅持實行社會主義制度，香港特別行政區繼續保持原有的資本主義制度和生活方式，五十年不變（第 5 條）**。\n• **「一國」與「兩制」的法理關係**：**「一國」是實行「兩制」的前提和基礎（根與本），「兩制」從屬和派生於「一國」，並統一於「一國」之內**。沒有「一國」，「兩制」就無從談起。"
+        ],
+        tableData: {
+          title: "📊 《中華人民共和國憲法》與《香港基本法》法理關係比較表（頁 3–6）",
+          headers: ["比較項目", "《中華人民共和國憲法》（必背）", "《中華人民共和國香港特別行政區基本法》（必背）"],
+          rows: [
+            ["法律位階與性質", "**國家的根本法、「母法」，具有最高法律地位和最高法律效力**", "根據《憲法》制定的**全國性法律、「子法」、「授權法」及香港特區的憲制性法律**"],
+            ["制定與通過機關", "**全國人民代表大會**（1982年12月4日通過現行憲法）", "**全國人民代表大會**（1990年4月4日通過，1997年7月1日實施）"],
+            ["適用範圍與約束力", "**適用於包括香港、澳門特區在內的全國範圍；一切法律不得抵觸《憲法》**", "全國性法律，主要在香港特區實施（全國亦須遵守）；**香港本地任何法律不得抵觸《基本法》**"],
+            ["兩者關係", "**《憲法》（第 31 條及第 62 條第 14 款）是制定《基本法》的立法依據**", "**與《憲法》共同構成香港特別行政區的憲制基礎**"]
+          ]
+        },
+        blanks: [
+          "《憲法》是國家的【根本法】（又稱「【母法】」），具有【最高】的法律地位和法律效力，適用於包括香港特區在內的【全國】範圍。",
+          "《基本法》是由【全國人民代表大會】根據《憲法》第 31 條及第 62 條制定的【全國性】法律，是地位低於《憲法》的「【子法】」和「授權法」。",
+          "《【憲法】》和《【基本法】》共同構成香港特別行政區的憲制基礎；香港特區立法機關制定的任何法律，均不得與《【基本法】》相抵觸。",
+          "在「一國兩制」下，「【一國】」是實行「兩制」的【前提】和基礎，「兩制」從屬和派生於「一國」，並統一於「一國」之內。"
+        ],
+        qaItems: [
+          {
+            title: "常見謬誤辨析（頁 4–5）：有人認為「香港實行資本主義制度，而《憲法》規定實行社會主義制度，所以在香港只需遵守《基本法》，《憲法》在香港並不適用。」試加以反駁。",
+            answer: "此觀點錯誤：\n① **【《憲法》具最高效力且全國適用】**：《憲法》是主權國家的**根本法（母法）**，在**包括香港特區在內的全國範圍內具有最高法律效力**。\n② **【《憲法》是《基本法》及「兩制」的合法性來源】**：正因為**《憲法》第 31 條**規定國家在必要時得設立特別行政區並由全國人大以法律規定其制度，香港才能制定《基本法》並合法保留資本主義制度。若否定《憲法》在香港的效力，《基本法》本身就會失去立法依據。因此，**《憲法》與《基本法》共同構成香港特區的憲制基礎**。"
+          }
+        ],
+        resources: [
+          { name: "課本教材：CS_T1U2_AnsCheck_RMA.pdf（第 1–7 頁）", url: DRIVE_U2 },
+          { name: "《基本法》網站：《中華人民共和國憲法》全文與簡介", url: "https://www.basiclaw.gov.hk/tc/constitution/introduction.html" }
+        ],
+        feynmanPrompt: "請向 12 歲學生解釋：《憲法》和《基本法》誰大誰小（母法 vs 子法）？為什麼不能說「香港只適用《基本法》而不適用《憲法》」？",
+        keywords: ["母法", "子法", "最高法律效力", "全國範圍", "第三十一條", "憲制基礎", "授權法", "前提和基礎"],
+        masterFeynman: "把國家法律體系想像成一棵大樹：**《憲法》是整棵樹的「樹根與主幹（母法）」，在全國範圍（包括香港和澳門）都具有最高法律效力**；而**《基本法》則是根據《憲法》第三十一條及第 62 條第 14 款長出來的「特區樹枝（子法與授權法）」**。如果砍掉《憲法》這根主幹，設立特別行政區和實行「一國兩制」就失去合法來源！因此，**《憲法》和《基本法》共同構成香港特區的憲制基礎，而「一國」永遠是「兩制」的前提和基礎**。",
+        mnemonic: "「**憲法是母法（全國適用最高效力），基本法是子法（特區憲制性法律），兩者共構香港憲制基礎；一國是前提，兩制從屬一國**」。",
+        quizzes: [
+          {
+            q: "1. 【能力評估 2.1（頁 26 題 a）】以下哪些項目是構成香港特區的憲制基礎？(1)《中華人民共和國憲法》 (2)《中英聯合聲明》 (3)《中華人民共和國香港特別行政區基本法》",
+            options: [
+              "A. 只有 (1) 和 (2)",
+              "B. 只有 (1) 和 (3)",
+              "C. 只有 (2) 和 (3)",
+              "D. (1)、(2) 和 (3)"
+            ],
+            correct: 1,
+            explanation: "正確答案為 B（見 CS_T1U2 頁 4–5 及頁 26）：**《憲法》和《基本法》共同構成香港特別行政區的憲制基礎；《中英聯合聲明》是解決香港問題的國際雙邊條約，並非特區憲制基礎**。"
+          },
+          {
+            q: "2. 【法理關係（頁 6–7）】關於「一國」與「兩制」的關係，下列哪項描述最準確？",
+            options: [
+              "A. 「一國」與「兩制」地位完全平行對等，互不隸屬",
+              "B. 「兩制」是「一國」的前提，先有「兩制」才有「一國」",
+              "C. 「一國」是實行「兩制」的前提和基礎，「兩制」從屬並統一於「一國」之內",
+              "D. 「一國」只涉及外交事務，內部事務完全不受「一國」原則約束"
+            ],
+            correct: 2,
+            explanation: "正確答案為 C（見 CS_T1U2 頁 6–7）：**「一國」是「兩制」的前提和基礎，「兩制」從屬和派生於「一國」，並統一於「一國」之內**。"
+          }
+        ]
+      },
+      {
+        id: 7,
+        ch: "Ch 2.2（課題二 頁 8–11）",
+        pdf: "CS_T1U2_AnsCheck_RMA.pdf",
+        title: "第 7 節：「一國兩制」下中央與香港特區的憲制關係",
+        subtitle: "2.2A 單一制國家與《基本法》根本性條款（第1、12條）、2.2B 全面管治權、2.2C 高度自治與「沒有剩餘權力」",
+        outcomes: "【預期學習成果】知識：理解中國作為**「單一制國家」**的四大特徵；掌握**《基本法》第 1 及 12 條根本性條款**、**中央「全面管治權」是特區「高度自治權」的源頭**，以及為何**香港特區「沒有剩餘權力」**。",
+        corePoints: [
+          "【2.2A 中國是單一制國家與《基本法》根本性條款（頁 8–9，資料 2.5、2.6）】\n• **中國作為單一制國家的四大特點**：① **全國只有一部《憲法》**；② **只有一個最高國家權力機關（全國人大）和一個中央人民政府（國務院）**；③ 國家按地域劃分行政區域，**地方政府的權力全部源自中央授權，並受中央監督**；④ **中央代表國家統一進行國際交往和行使外交權**。\n• **《基本法》根本性條款**（《香港國安法》第 2 條明確指明）：\n  1. **《基本法》第一條：「香港特別行政區是中華人民共和國不可分離的部分。」**\n  2. **《基本法》第十二條：「香港特別行政區是中華人民共和國的一個享有高度自治權的地方行政區域，直轄於中央人民政府。」**（與省、自治區、直轄市同級）。",
+          "【2.2B 中央對香港特別行政區擁有全面管治權（頁 9–10，資料 2.7）】\n• 法理基礎：**主權與治權不可分割**。1997 年 7 月 1 日中國恢復對香港行使主權，即同時擁有對香港的**「全面管治權」**。\n• 全面管治權的範圍（**絕不只限於國防和外交**）：包括決定設立特區並制定《基本法》、中央依法直接行使的權力、依法授權特區實行高度自治，以及對特區的監督權。\n• 核心關係：**中央的全面管治權是特區高度自治權的源頭**。",
+          "【2.2C 授權與被授權關係及香港特區「沒有剩餘權力」（頁 10–11，資料剖析，必考！）】\n• **授權與被授權關係**：根據《基本法》**第 2 條及第 20 條**，中央與香港特區是**「授權與被授權」**的關係，並非分權關係。\n• **資料剖析（頁 11 梁愛詩文章）：為什麼香港特別行政區沒有「剩餘權力」？**\n  1. **「剩餘權力」是聯邦制國家的概念**（各成員邦原本擁有主權，把部分權力交予聯邦後保留剩餘權力）。\n  2. **中國是單一制國家，主權完整屬於國家**；香港特區只是地方行政區域，自身從來沒有固有主權或固有權力。\n  3. **「中央授予多少權力，香港特別行政區就享有多少權力」**，凡《基本法》沒有明確列明授予香港特區的權力，均保留在中央手中，**故香港特區絕對沒有「剩餘權力」**（如有需要，須由中央根據**《基本法》第 20 條**另行授權）。\n  4. **高度自治不等於「完全自治」**：特區行使高度自治權必須接受中央監督。"
+        ],
+        tableData: {
+          title: "📊 國家結構形式比較：單一制（中國）vs 聯邦制（如美國）（頁 8–11）",
+          headers: ["比較項目", "單一制國家（如中華人民共和國）（必背）", "聯邦制國家（如美國）"],
+          rows: [
+            ["憲法與中央機關", "**全國只有一部《憲法》和一套最高中央國家機關體系**", "除聯邦憲法和聯邦政府外，各成員邦（州）有自己的憲法和政權體系"],
+            ["權力來源方向", "**自上而下（中央授權地方）：地方權力完全源自中央授予**", "自下而上（各邦讓渡權力予聯邦）：各邦將部分權力交予聯邦"],
+            ["剩餘權力歸屬", "**未明確授予地方的權力完全歸屬中央；香港特區「沒有剩餘權力」**", "聯邦憲法未列明授予聯邦的「剩餘權力」，保留在各州（邦）手中"],
+            ["香港特區憲制定位", "**直轄於中央人民政府、享有高度自治權的地方行政區域（《基本法》第1、12條）**", "不適用（**高度自治絕不等同完全自治**）"]
+          ]
+        },
+        blanks: [
+          "中國是一個【單一制】國家，地方政府的權力源自【中央】授予，並受中央監督。",
+          "《香港國安法》第 2 條指明，《基本法》【第一】條（香港特區是中華人民共和國不可分離的部分）和【第十二】條（享有高度自治權的地方行政區域，【直轄】於中央人民政府）是《基本法》的【根本性】條款。",
+          "中央對香港特區擁有【全面管治權】，這是特區【高度自治權】的源頭；中央與香港特區是「【授權】與被授權」的關係。",
+          "「中央授予多少權力，香港特區就享有多少權力」，未明確授予的權力歸屬中央，因此香港特區沒有「【剩餘權力】」，高度自治亦不等同【完全】自治。"
+        ],
+        qaItems: [
+          {
+            title: "資料剖析（頁 11）：根據基本法委員會前副主任梁愛詩的文章及就你所知，解釋為何香港特別行政區不享有「剩餘權力」。",
+            answer: "① **【國家結構形式決定（單一制 vs 聯邦制）】**：「剩餘權力」只存在於聯邦制國家。而**中國是單一制國家，主權屬於國家整體，地方行政區域本身沒有固有權力**。\n② **【授權與被授權關係（《基本法》第 2、12、20 條）】**：香港特區是**直轄於中央人民政府的地方行政區域**，其高度自治權完全來自全國人大的授權，**「中央授予多少權力，特區就享有多少權力」**。凡《基本法》未明確授予香港特區的權力，均屬於中央所有（如有需要須依**《基本法》第 20 條**由中央另行授權），**因此香港特區沒有「剩餘權力」**。"
+          }
+        ],
+        resources: [
+          { name: "課本教材：CS_T1U2_AnsCheck_RMA.pdf（第 8–11 頁）", url: DRIVE_U2 },
+          { name: "《基本法》第一章（第 1–11 條）及第二章（第 12 條）", url: "https://www.basiclaw.gov.hk/tc/basiclaw/chapter1.html" }
+        ],
+        feynmanPrompt: "請向 12 歲學生解釋：為什麼香港特區「沒有剩餘權力」？「高度自治」和「完全自治」有什麼本質區別？",
+        keywords: ["單一制", "第一條", "第十二條", "直轄於中央", "全面管治權", "授權", "剩餘權力", "完全自治"],
+        masterFeynman: "美國那種「聯邦制」像是幾個原本獨立的小國合夥組建聯邦，沒寫進聯邦憲法的權力留在各州手裡（叫剩餘權力）。但**中國是「單一制國家」**，就像一家總公司（中央）決定開一家特級直營分公司（**香港特區，依《基本法》第一條及第十二條直轄於中央**）。總公司擁有**全面管治權**，分公司的高度自治權 100% 來自總公司的**授權**（《基本法》）。授權書上沒寫給你的權力，當然留在總公司手裡，所以**香港絕對沒有「剩餘權力」，高度自治也絕不等於完全自治**！",
+        mnemonic: "「**單一制國家、第 1 及 12 條根本性條款、全面管治權是源頭、高度自治靠授權、香港絕無剩餘權力**」。",
+        quizzes: [
+          {
+            q: "1. 【資料剖析（頁 11）】根據梁愛詩文章及《基本法》，為什麼香港特別行政區沒有「剩餘權力」？",
+            options: [
+              "A. 因為香港的剩餘權力已移交予香港終審法院行使",
+              "B. 因為中國是單一制國家，主權屬中央，香港特區自身沒有固有權力，其高度自治權完全源自中央授權，未明確授予的權力歸屬中央",
+              "C. 因為《中英聯合聲明》禁止香港行使剩餘權力",
+              "D. 因為香港實行普通法制度"
+            ],
+            correct: 1,
+            explanation: "正確答案為 B（見 CS_T1U2 頁 10–11）：**中國是單一制國家，地方權力源自中央授予，「中央授予多少權力，香港特別行政區就享有多少權力」，故沒有剩餘權力**。"
+          },
+          {
+            q: "2. 【根本性條款（頁 9）】《香港國安法》第 2 條指明，《基本法》哪兩條條文是《基本法》的「根本性條款」？",
+            options: [
+              "A. 第 1 條及第 12 條",
+              "B. 第 5 條及第 8 條",
+              "C. 第 23 條及第 45 條",
+              "D. 第 158 條及第 159 條"
+            ],
+            correct: 0,
+            explanation: "正確答案為 A（見 CS_T1U2 頁 9）：**《基本法》第 1 條（香港特區是中華人民共和國不可分離的部分）及第 12 條（享有高度自治權的地方行政區域，直轄於中央人民政府）是《基本法》的根本性條款**。"
+          }
+        ]
+      },
+      {
+        id: 8,
+        ch: "Ch 2.3 上（課題二 頁 12–14）",
+        pdf: "CS_T1U2_AnsCheck_RMA.pdf",
+        title: "第 8 節：中央對香港特區直接行使的權力（一）：設區、任免與釋法修法",
+        subtitle: "2.3A 設立特區、2.3B 實質任命權、2.3C《基本法》第 158 條解釋權（含六次釋法）與第 159 條修改權",
+        outcomes: "【預期學習成果】知識：掌握中央對行政長官和主要官員的**「實質任命權」**；精準區分**《基本法》第 158 條解釋權（全國人大常委會）**與**第 159 條修改權（全國人大）**，以及**終審法院提請釋法的兩大條件**與**六次釋法**。",
+        corePoints: [
+          "【2.3A 決定設立香港特別行政區及其制度（頁 12）】**全國人民代表大會**根據**《憲法》第 31 條及第 62 條第 14 款**，決定香港特別行政區的設立及其實行的制度。",
+          "【2.3B 組建香港特區政權機關的實質任命權（頁 12，資料 2.8、2.9）】\n• 根據《基本法》**第 15 條、第 45 條及第 48 條第 5 款**，**中央人民政府任命香港特區行政長官和政府主要官員**。\n• 主要官員包括：**各司司長（政務司、財政司、律政司）、副司長，各決策局局長，以及廉政專員、審計署署長、警務處處長、入境事務處處長、海關關長**。\n• **實質任命權**：中央對行政長官和主要官員的任命及免職，具有**「實質任命權」**，並非形式任命。",
+          "【2.3C 解釋和修改《基本法》的權力（頁 13–14，資料 2.10、2.11，必考重點！）】\n1. **《基本法》第 158 條（解釋權運作機制）**：\n   • **最終和最高解釋權**：**《基本法》的解釋權屬於「全國人民代表大會常務委員會」**（釋法前徵詢其所屬的**「香港特別行政區基本法委員會」**意見）。\n   • **授權特區法院解釋**：全國人大常委會授權香港特區法院在審理案件時，對《基本法》關於**香港特區自治範圍內的條款自行解釋**，也可對其他條款作解釋。\n   • **終審法院提請釋法的兩個法定條件**：如香港特區法院在審理案件時，需要對《基本法》關於**（條件一）「中央人民政府管理的事務或中央和香港特別行政區關係的條款」**進行解釋，而**（條件二）「該條款的解釋又影響到案件的判決」**，在作出不可上訴的終局判決前，**應由「香港特別行政區終審法院」請全國人大常委會對有關條款作出解釋**。\n2. **回歸以來全國人大常委會的六次釋法（頁 14 資料 2.11）**：\n   ① **1999 年 6 月（第一次）：港人內地所生子女居港權問題**（第 22、24 條）— 由**行政長官**提請。\n   ② **2004 年 4 月（第二次）：政制發展修改程序（「政改五步曲」）**— **全國人大常委會主動釋法**。\n   ③ **2005 年 4 月（第三次）：補選產生的行政長官任期問題**（第 53 條，剩餘任期）— 由**署理行政長官**提請。\n   ④ **2011 年 8 月（第四次）：剛果民主共和國主權豁免案（剛果債務案）**（第 13 條外交事務及第 19 條國家行為）— **唯一由「香港終審法院」依第 158 條第 3 款提請釋法**。\n   ⑤ **2016 年 11 月（第五次）：公職人員就職宣誓規定**（第 104 條）— **全國人大常委會主動釋法**。\n   ⑥ **2022 年 12 月（第六次）：海外律師能否處理危害國家安全案件**（《香港國安法》第 14、47 條）— 由**行政長官**提請。\n3. **《基本法》第 159 條（修改權）**：\n   • **《基本法》的修改權屬於「全國人民代表大會」**。\n   • **修改提案權屬於「全國人大常委會」、「國務院」和「香港特別行政區」**（香港特區的修改議案，須經**港區全國人大代表三分之二多數、立法會全體議員三分之二多數和行政長官同意**）。任何修改均不得同國家對香港既定的基本方針政策相抵觸。"
+        ],
+        tableData: {
+          title: "📊 資料 2.11：香港回歸以來全國人大常委會六次釋法一覽表（頁 14）",
+          headers: ["次數與年份", "涉及核心議題（必記）", "涉及條文", "提請 / 啟動方式（必記）"],
+          rows: [
+            ["第1次（**1999年6月**）", "港人內地所生子女居港權問題", "《基本法》第22條第4款、第24條第2款第3項", "**行政長官**提請國務院轉請釋法"],
+            ["第2次（**2004年4月**）", "政制發展修改程序（「政改五步曲」）", "《基本法》附件一第7條、附件二第3條", "**全國人大常委會主動釋法**"],
+            ["第3次（**2005年4月**）", "補選產生的行政長官任期（剩餘任期）", "《基本法》第53條第2款", "**署理行政長官**提請國務院轉請釋法"],
+            ["**第4次（2011年8月）**", "**剛果民主共和國主權豁免案（剛果債務案）**", "**《基本法》第13條第1款、第19條**", "**香港終審法院依第158條第3款提請釋法**"],
+            ["第5次（**2016年11月**）", "公職人員就職宣誓規定與法律後果", "《基本法》第104條", "**全國人大常委會主動釋法**"],
+            ["第6次（**2022年12月**）", "海外律師能否參與處理國安案件", "《香港國安法》第14條、第47條", "**行政長官**提請釋法"]
+          ]
+        },
+        blanks: [
+          "中央人民政府依法任命行政長官和主要官員，擁有「【實質任命權】」。",
+          "根據《基本法》第 158 條，《基本法》的解釋權屬於【全國人民代表大會常務委員會】；特區法院在審理案件時，如需要對《基本法》關於【中央人民政府管理的事務】或【中央和香港特別行政區關係】的條款進行解釋，而該條款的解釋又【影響到案件的判決】，在作出終局判決前，應由【終審法院】提請全國人大常委會釋法（例如 2011 年的【剛果債務】案）。",
+          "根據《基本法》第 159 條，《基本法》的修改權屬於【全國人民代表大會】，修改提案權屬於【全國人大常委會】、【國務院】和【香港特別行政區】。"
+        ],
+        qaItems: [
+          {
+            title: "重點辨析（頁 13–14）：試比較《基本法》的「解釋權」與「修改權」在行使機關、授權情況及限制上的分別。",
+            answer: "① **【解釋權（第 158 條）】**：屬於**全國人民代表大會常務委員會**（釋法前徵詢基本法委員會意見）。全國人大常委會授權香港特區法院在審理案件時自行解釋自治範圍內的條款及其他條款，但若**涉及中央管理事務或中央與特區關係且影響案件判決，終審法院須在終局判決前提請全國人大常委會釋法**。\n② **【修改權（第 159 條）】**：屬於最高國家權力機關——**全國人民代表大會**（不授權特區自行修改）。**修改提案權屬於全國人大常委會、國務院和香港特區**三方，且任何修改均不得同國家對香港既定的基本方針政策相抵觸。"
+          }
+        ],
+        resources: [
+          { name: "課本教材：CS_T1U2_AnsCheck_RMA.pdf（第 12–14 頁）", url: DRIVE_U2 },
+          { name: "《基本法》第八章：本法的解釋和修改（第 158–159 條）", url: "https://www.basiclaw.gov.hk/tc/basiclaw/chapter8.html" },
+          { name: "政府新聞網：中國憲法對香港特區有效及剛果案釋法說明", url: "https://www.news.gov.hk/chi/2022/05/20220527/20220527_163705_452.html" }
+        ],
+        feynmanPrompt: "請向 12 歲學生解釋：《基本法》的「解釋權」和「修改權」分別歸誰？香港法院在什麼情況下必須提請全國人大常委會釋法？",
+        keywords: ["實質任命權", "全國人大常委會", "解釋權", "全國人民代表大會", "修改權", "終審法院", "中央政府管理的事務", "影響到案件的判決", "剛果債務案"],
+        masterFeynman: "記住一個核心分工口訣：**「解釋權歸全國人大常委會（第 158 條），修改權歸全國人民代表大會（第 159 條）」**，而中央對特首和主要官員有**實質任命權**。平時審案時，全國人大常委會授權香港法院自己解釋特區自治範圍內的條文；但一旦遇到兩個條件同時出現：(1) 條文涉及**中央政府管理的事務或中央與特區關係** ＋ (2) 該條文的解釋會**影響到案件的判決**，香港**終審法院**就必須在終局判決前向全國人大常委會提請釋法（例如 2011 年涉及外交豁免權的**「剛果債務案」**）。",
+        mnemonic: "「**158 條常委釋法（兩條件終院提請：涉中央事務或關係＋影響判決），159 條人大修法（提案權歸常委、國務院、特區）**」。",
+        quizzes: [
+          {
+            q: "1. 【條文精讀（頁 13–14）】根據《基本法》第 158 條及第 159 條，下列哪一項關於《基本法》解釋權與修改權的配對是正確的？",
+            options: [
+              "A. 解釋權：香港終審法院；修改權：全國人大常委會",
+              "B. 解釋權：全國人大常委會；修改權：全國人民代表大會",
+              "C. 解釋權：國務院；修改權：香港立法會",
+              "D. 解釋權：全國人民代表大會；修改權：全國人大常委會"
+            ],
+            correct: 1,
+            explanation: "正確答案為 B（見 CS_T1U2 頁 13–14）：**《基本法》第 158 條訂明解釋權屬全國人大常委會；第 159 條訂明修改權屬全國人民代表大會**。"
+          },
+          {
+            q: "2. 【案例分析（頁 14 資料 2.11）】在回歸以來的六次釋法中，哪一次是由香港「終審法院」根據《基本法》第 158 條第 3 款提請全國人大常委會釋法？",
+            options: [
+              "A. 1999 年港人內地子女居港權問題",
+              "B. 2011 年剛果債務案（涉及第 13 條外交事務及第 19 條國家行為管轄權）",
+              "C. 2016 年公職人員宣誓規定",
+              "D. 2022 年海外律師能否處理國安案件"
+            ],
+            correct: 1,
+            explanation: "正確答案為 B（見 CS_T1U2 頁 14 資料 2.11）：**2011 年 8 月「剛果債務案」是由終審法院提請全國人大常委會釋法**。"
+          }
+        ]
+      },
+      {
+        id: 9,
+        ch: "Ch 2.3 下（課題二 頁 14–19）",
+        pdf: "CS_T1U2_AnsCheck_RMA.pdf",
+        title: "第 9 節：中央對香港特區直接行使的權力（二）：外交防務、重大決定與監督權",
+        subtitle: "2.3D 外交防務、2.3E 附件三全國性法律雙軌實施（資料剖析）、2.3F 三大監督權與課堂活動 2.1 完善選舉制度",
+        outcomes: "【預期學習成果】知識：掌握中央管理外交與防務（**駐軍費用由中央負擔**）；理解**《基本法》第 18 條附件三全國性法律在港實施的兩種方式（直接公布 vs 本地立法）**、**對特區立法備案發回機制**，以及 **2021 年完善選舉制度三步曲**。",
+        corePoints: [
+          "【2.3D 負責與香港特區有關的外交事務和防務（頁 14–15，資料 2.12、2.13）】\n• **外交事務（《基本法》第 13 條）**：**中央人民政府負責管理與香港特區有關的外交事務**；外交部在香港設立**「外交部駐香港特別行政區特派員公署」**處理外交事務。\n• **防務（《基本法》第 14 條）**：**中央人民政府負責管理香港特區的防務**，派駐解放軍駐港部隊。駐軍**不干預特區地方事務**，特區政府在必要時可向中央請求駐軍協助維持社會治安和救助災害；駐軍人員須遵守全國性法律及香港特區法律；**駐軍費用由中央人民政府負擔**。",
+          "【2.3E 就重大事項作出決定的權力與《基本法》附件三（頁 15–16，資料剖析，必考！）】\n• 宣布戰爭或緊急狀態（第 18 條第 4 款）：**全國人大常委會**決定宣布戰爭狀態或決定特區進入**緊急狀態**，中央人民政府可發布命令將有關全國性法律在港實施。\n• **《基本法》附件三全國性法律的增減與實施（第 18 條第 2、3 款，頁 16 資料剖析）**：\n  1. **範圍限制**：全國性法律**除列於《基本法》附件三者外，不在香港特區實施**。全國人大常委會在徵詢**基本法委員會和香港特區政府**的意見後，可對附件三法律作增減；任何列入附件三的法律，**限於有關「國防、外交和其他按《基本法》規定不屬於香港特別行政區自治範圍的法律」**。\n  2. **兩種實施方式與標準例子**：\n     ① **由香港特區在當地公布實施（直接公布）**：由行政長官在《憲報》刊登公告原文直接實施。**標準例子：《中華人民共和國香港特別行政區維護國家安全法》（《香港國安法》）**、《國籍法》、《駐軍法》。\n     ② **由香港特區立法實施（本地立法）**：由特區立法會參照全國性法律制定本地法例實施。**標準例子：《中華人民共和國國歌法》透過制定《國歌條例》實施**、《國旗法》及《國徽法》透過《國旗及國徽條例》實施。",
+          "【2.3F 對香港特別行政區的三大監督權（頁 17，資料 2.14）】\n① **對行政管理權的監督**：行政長官須對中央人民政府負責（第 43 條），**每年向中央述職**；**執行中央發出的指令**（第 48 條第 8 款）；**財政預算和決算報中央備案**。\n② **對立法權的監督（《基本法》第 17 條，事後備案與發回機制）**：香港特區立法機關制定的法律須**報「全國人民代表大會常務委員會備案」**（備案不影響生效）。全國人大常委會在徵詢基本法委員會後，如認為特區制定的法律**不符合《基本法》關於中央管理的事務及中央和香港特區的關係的條款，可將有關法律「發回，但不作修改」；經發回的法律「立即失效」**。\n③ **對司法權的監督（《基本法》第 90 條）**：香港特區**終審法院的法官和高等法院首席法官的任命或免職**，須由行政長官徵得立法會同意，並**報「全國人民代表大會常務委員會備案」**。",
+          "【課堂活動 2.1（頁 18–19）：2021 年完善香港特別行政區選舉制度三步曲】\n• 目的：堵塞香港選舉制度漏洞，全面落實**「愛國者治港」**原則，維護國家主權、安全、發展利益及香港長期繁榮穩定。\n• **「決定 ＋ 修法 ＋ 本地立法」三步曲**：\n  **第一步（2021年3月11日）**：**全國人民代表大會**通過《關於完善香港特別行政區選舉制度的決定》，並授權全國人大常委會修法。\n  **第二步（2021年3月30日）**：**全國人民代表大會常務委員會**修訂通過**《基本法》附件一（行政長官產生辦法）和附件二（立法會產生辦法和表決程序）**。\n  **第三步（2021年5月27日）**：**香港特區立法會**三讀通過《2021 年完善選舉制度（綜合修訂）條例草案》，完成本地選舉法律修訂。"
+        ],
+        tableData: {
+          title: "📊 《基本法》第 18 條：附件三全國性法律在香港實施的雙軌機制與例子（頁 16）",
+          headers: ["實施方式（必背）", "運作程序", "適用考量", "課本標準例子（必背）"],
+          rows: [
+            ["**直接公布實施**", "由行政長官在《憲報》刊登公告，將全國性法律原文直接在香港實施", "條文具體明確、具迫切性或須全國統一原文執行", "**《香港國安法》**（2020年6月30日刊憲生效）、**《國籍法》**、**《駐軍法》**"],
+            ["**本地立法實施**", "由特區政府擬定條例草案，經立法會審議通過成為香港本地法例實施", "需結合香港普通法法律體系、罰則用語及本地實際情況作具體規範", "**《國歌法》→ 制定《國歌條例》**（2020年）；**《國旗法》《國徽法》→《國旗及國徽條例》**"]
+          ]
+        },
+        blanks: [
+          "中央人民政府負責管理香港的外交事務（設外交部駐港特派員公署）和防務（派駐解放軍駐港部隊，且駐軍費用由【中央人民政府】負擔）。",
+          "列入《基本法》【附件三】的全國性法律，限於有關【國防】、【外交】和其他按《基本法》規定不屬於香港特區【自治範圍】的法律，並透過「【直接公布】」（如《香港國安法》）或「【本地立法】」（如《國歌法》）兩種方式在港實施。",
+          "香港特區立法機關制定的法律須報【全國人大常委會】備案；若不符合《基本法》關於中央管理事務及中央和特區關係的條款，全國人大常委會可將法律【發回】，但不作修改，經發回的法律【立即失效】。"
+        ],
+        qaItems: [
+          {
+            title: "資料剖析（頁 16）：根據《基本法》第 18 條，說明全國性法律在香港特區實施的條件、程序與兩種方式，並分析這如何體現「一國兩制」。",
+            answer: "① **【實施條件、程序與方式】**：只有列於**《基本法》附件三**的全國性法律才在香港實施，且**限於國防、外交及其他不屬特區自治範圍的法律**。全國人大常委會在徵詢基本法委員會和特區政府意見後可對附件三作增減，並由香港特區以**「直接公布」（如《香港國安法》）或「本地立法」（如《國歌法》）**方式實施。\n② **【如何體現「一國兩制」】**：一方面，涉及**國防、外交、國家安全等主權層面的全國性法律可列入附件三在港實施，體現國家主權統一與「一國」原則**；另一方面，**屬特區自治範圍的事務不適用全國性法律，且允許透過「本地立法」適應香港普通法制度，充分尊重並體現「兩制」差異**。"
+          },
+          {
+            title: "課堂活動 2.1（頁 18–19）：2021 年中央完善香港特別行政區選舉制度經歷了哪三個步驟？為何中央有權亦有責任作出此項憲制安排？",
+            answer: "① **【三個步驟】**：**第一步，全國人大通過《決定》並授權全國人大常委會；第二步，全國人大常委會修訂《基本法》附件一和附件二；第三步，香港特區修改本地相關選舉法例**。\n② **【法理依據與原因】**：**政治體制（包括選舉制度）屬於中央事權**。根據**《憲法》第 31 條及第 62 條第 14 款**，全國人大有權決定特區的制度。完善選舉制度能堵塞制度漏洞，**確保「愛國者治港」，維護國家主權、安全、發展利益和香港長期繁榮穩定**。"
+          }
+        ],
+        resources: [
+          { name: "課本教材：CS_T1U2_AnsCheck_RMA.pdf（第 14–19 頁）", url: DRIVE_U2 },
+          { name: "《基本法》第二章（第 13、14、17、18 條）", url: "https://www.basiclaw.gov.hk/tc/basiclaw/chapter2.html" },
+          { name: "《基本法》附件三：在香港特別行政區實施的全國性法律", url: "https://www.basiclaw.gov.hk/tc/basiclaw/annex3.html" }
+        ],
+        feynmanPrompt: "請向 12 歲學生解釋：為什麼內地的《刑法》不在香港實施，但《香港國安法》和《國歌法》卻在香港實施？「直接公布」和「本地立法」有什麼分別？",
+        keywords: ["附件三", "國防", "外交", "直接公布", "香港國安法", "本地立法", "國歌法", "備案", "發回", "完善選舉制度"],
+        masterFeynman: "這正是《基本法》第 18 條體現「一國兩制」的精妙設計：(1) 體現「兩制」：凡屬香港自治範圍的事，由香港自己的法律管（且特區立法須報人大常委會**備案**，違憲制可**發回**失效），所以內地《刑法》不在香港實施；(2) 體現「一國」：凡涉及**國防、外交**、國家安全等不屬特區自治範圍的全國性法律，全國人大常委會可列入《基本法》**附件三**在港實施（正如 **2021 完善選舉制度**亦屬中央事權）。實施時有兩種方式：緊急或需原文落實的用**「直接公布」（如《香港國安法》）**；需配合香港普通法條文習慣的用**「本地立法」（如《國歌法》制定《國歌條例》）**。",
+        mnemonic: "「**附件三限國防外交非自治；直接公布國安法，本地立法國歌法；特區立法報常委備案，違憲制可發回失效**」。",
+        quizzes: [
+          {
+            q: "1. 【資料剖析（頁 16）】列於《基本法》附件三的全國性法律在香港實施的兩種方式及對應例子是什麼？",
+            options: [
+              "A. 法院判例（例：《香港國安法》）及 行政命令（例：《國歌法》）",
+              "B. 直接公布（例：《香港國安法》）及 本地立法（例：《國歌法》）",
+              "C. 全民公投（例：《國籍法》）及 立法會備案（例：《駐軍法》）",
+              "D. 直接公布（例：《民法典》）及 本地立法（例：《刑法》）"
+            ],
+            correct: 1,
+            explanation: "正確答案為 B（見 CS_T1U2 頁 16 資料剖析流程圖）：**列於《基本法》附件三的全國性法律透過「直接公布」（如《香港國安法》）或「本地立法」（如《國歌法》）在港實施**。"
+          },
+          {
+            q: "2. 【立法監督權（頁 17）】根據《基本法》第 17 條，若全國人大常委會在徵詢基本法委員會後，認為香港立法會制定的法律不符合《基本法》關於中央管理事務及中央與特區關係的條款，可如何處理？",
+            options: [
+              "A. 直接替香港立法會修改該法律條文並重新頒布",
+              "B. 將有關法律發回，但不作修改；經發回的法律立即失效",
+              "C. 交由香港終審法院投票表決是否保留",
+              "D. 解散香港特別行政區立法會"
+            ],
+            correct: 1,
+            explanation: "正確答案為 B（見 CS_T1U2 頁 17 資料 2.14）：**全國人大常委會可將有關法律發回，但不作修改；經發回的法律立即失效**。"
+          }
+        ]
+      },
+      {
+        id: 10,
+        ch: "Ch 2.4（課題二 頁 20–26）",
+        pdf: "CS_T1U2_AnsCheck_RMA.pdf",
+        title: "第 10 節：香港特區獲中央授予的權力、四大憲制責任與全章總複盤",
+        subtitle: "2.4A 高度自治三權與司法三限制、2.4B 資本主義制度、2.4C 對外事務雙重身份、2.4D 第20條其他授權與能力評估 2.1",
+        outcomes: "【預期學習成果】知識：掌握香港特區獲授予的**行政管理權、立法權、獨立司法權和終審權（及其三大限制）**；精準區分參與國際組織的雙重身份（**「中國代表團成員」vs「中國香港」**）、**《基本法》第 20 條其他授權（深圳灣口岸港方口岸區）**及**四大憲制責任**。",
+        corePoints: [
+          "【2.4A 享有高度自治權：三大權力與司法權限制（頁 20–22，資料 2.15–2.17）】\n① **行政管理權（《基本法》第 16 條）**：自行處理經濟、財政、金融、貿易、教育、醫療、房屋等內部行政事務（課本例子：推行「明日大嶼願景」、現金發放計劃）。\n② **立法權（《基本法》第 17 條）**：可制定、修改和廢除**民事、刑事、商事和訴訟程序**等法律，立法範圍比內地省級行政區更廣泛。\n③ **獨立的司法權和終審權（《基本法》第 8、19、81、85 條）**：保留普通法制度；法院獨立進行審判，不受任何干涉；**終審權屬於「香港特別行政區終審法院」**。\n④ **香港法院司法管轄權的三大法定限制（頁 21–22，必考重點！）**：\n   • **限制一：須繼續保持香港原有法律制度和原則對法院審判權所作的限制**（第 19 條第 2 款）；\n   • **限制二：對「國防、外交等國家行為」無管轄權**（第 19 條第 3 款；遇有涉及國防、外交等國家行為的事實問題，應取得行政長官在取得中央證明書後發出的證明文件）；\n   • **限制三：審理案件時如涉及中央管理事務或中央與特區關係且影響判決的《基本法》條款，終審法院須提請全國人大常委會釋法**（第 158 條）。",
+          "【2.4B 保持不同於內地的社會制度和生活方式（頁 22，資料 2.18）】\n① **「港人治港」**：香港特區行政機關和立法機關由香港永久性居民依照《基本法》組成（第 3 條）。\n② **保護私有財產權**：依法保護私人和法人的財產所有權（第 6、105 條）。\n③ **財政獨立與中央不徵稅**：**財政收入全部用於自身需要，不上繳中央人民政府；中央人民政府不在香港特別行政區徵稅（第 106 條）**；實行獨立低稅制（第 108 條）。\n④ **貨幣與外匯自由**：**港元為香港特區法定貨幣；不實行外匯管制政策，港幣自由兌換**，資金流動和進出自由（第 111–112 條）。",
+          "【2.4C 獲授權自行處理有關的對外事務：雙重身份辨析（頁 23，資料 2.19，必考！）】\n根據《基本法》第七章（第 150–157 條），香港特區參與國際組織和會議時分為兩種身份：\n① **以「中國代表團成員」身份**參加**【以國家為單位】**的國際組織和國際會議：\n   • 課本完整例子：**國際電信聯盟（ITU）、二十國集團（G20）、世界衛生組織（WHO）、國際貨幣基金組織（IMF）、世界銀行（World Bank）**。\n② **以「中國香港」的名義**單獨參加**【不以國家為單位】**的國際組織和國際會議：\n   • 課本完整例子：**亞太區經濟合作組織（APEC）、亞洲基礎設施投資銀行（AIIB）、世界貿易組織（WTO）及其法律支援中心、C40 城市氣候領導聯盟**；以及承辦 **2005 年世界貿易組織香港部長級會議、2009 年第五屆東亞運動會**。",
+          "【2.4D 享有中央授予的其他權力與四大憲制責任（頁 23–24，資料 2.20、2.21）】\n• **《基本法》第 20 條（其他授權）**：「香港特別行政區可享有全國人民代表大會和全國人民代表大會常務委員會及中央人民政府授予的其他權力。」\n  • **課本標準例子**：**2006 年全國人大常委會授權香港特區對設於深圳境內的「深圳灣口岸港方口岸區」依照香港特區法律行使管轄權**。\n• **香港特別行政區的四大憲制責任（頁 24 資料 2.21）**：\n  ① **維護國家主權、安全和發展利益**；\n  ② **維護《憲法》和《基本法》確立的特別行政區憲制秩序**；\n  ③ **保持香港長期繁榮穩定**；\n  ④ **積極融入國家發展大局**（對接國家「十四五」規劃、粵港澳大灣區建設、「一帶一路」倡議）。"
+        ],
+        tableData: {
+          title: "📊 資料 2.19：香港特區參與國際組織及國際會議的雙重身份完整對照表（頁 23）",
+          headers: ["參與身份 / 名義（必背）", "國際組織 / 會議性質", "課本列舉之全部國際組織與會議例子（必背）"],
+          rows: [
+            ["**以「中國代表團成員」身份參加**", "**以「主權國家」為單位**的國際組織及會議", "• **世界衛生組織（WHO）**\n• **國際貨幣基金組織（IMF）**\n• **世界銀行（World Bank）**\n• **二十國集團（G20）**\n• **國際電信聯盟（ITU）**"],
+            ["**以「中國香港」名義單獨參加**", "**「不以國家為單位」**的國際組織、會議及大型活動", "• **亞太區經濟合作組織（APEC）**\n• **亞洲基礎設施投資銀行（AIIB）**\n• **世界貿易組織（WTO）及世貿法律支援中心**\n• **C40 城市氣候領導聯盟**\n• 承辦 **2005 年世貿組織香港部長級會議、2009 年東亞運動會**"]
+          ]
+        },
+        blanks: [
+          "香港特區依法享有高度自治權，包括【行政管理權】、【立法權】、獨立的【司法權】和【終審權】；但特區法院對【國防】、【外交】等國家行為無管轄權。",
+          "香港特區保持財政獨立，財政收入不上繳中央，中央人民政府不在香港【徵稅】；【港元】為特區法定貨幣，自由兌換，不實行【外匯管制】政策。",
+          "香港特區參與以國家為單位的國際組織（如【世界衛生組織】、IMF、G20）時，以「【中國代表團成員】」身份參加；參與不以國家為單位的國際組織（如【亞太區經濟合作組織】APEC、世貿 WTO、亞投行 AIIB）時，以「【中國香港】」名義參加。",
+          "2006 年全國人大常委會根據《基本法》【第二十】條，授權香港特區對設於深圳境內的「【深圳灣口岸】港方口岸區」行使管轄權並實施香港法律。"
+        ],
+        qaItems: [
+          {
+            title: "能力評估 2.1 題 (a)、題 (b) 及 題 (c) 完整標準答案（頁 25–26）",
+            answer: "• 題 (a)：以下哪些項目是構成香港特區的憲制基礎？(1)《中華人民共和國憲法》 (2)《中英聯合聲明》 (3)《中華人民共和國香港特別行政區基本法》\n  **【答案】：B. 只有 (1) 和 (3)**。\n• 題 (b)：根據資料 A，《基本法》的條文如何體現「一國」原則和「兩制」原則？試各舉一例加以說明。\n  **【答案】**：\n  ① **體現「一國」原則**：資料 A 中**《基本法》第 1 條訂明「香港特別行政區是中華人民共和國不可分離的部分」**（或**第 12 條訂明香港特區直轄於中央人民政府；第 13、14 條訂明中央負責管理香港外交事務和防務；第 17 條訂明特區立法須報全國人大常委會備案；第 158 條訂明《基本法》解釋權屬全國人大常委會**），反映國家主權統一不可分割，香港受中央全面管治與監督。\n  ② **體現「兩制」原則**：資料 A 中**《基本法》第 2 條訂明全國人大授權香港特區實行高度自治，享有行政管理權、立法權、獨立的司法權和終審權**（或第 158 條第 2 款授權香港法院在審理案件時自行解釋自治範圍內的條款），反映國家尊重香港原有制度，賦予香港特區高度自治。\n• 題 (c)：根據資料 B 及就你所知，說明香港特區維護國家主權、安全、發展利益對香港自身發展的重要性。\n  **【答案】**：**「一國」是「兩制」的前提和基礎，維護國家主權、安全、發展利益是「一國兩制」方針的最高原則**。只有堅定維護國家安全（如落實《香港國安法》及「愛國者治港」），才能**防範內外敵對勢力破壞，維持香港社會治安、法治與政治穩定，保障市民基本權利和自由，並營造安全穩定的營商環境吸引外資，從而使香港得以發揮背靠祖國、聯通世界的獨特優勢，積極融入國家發展大局，保持長期繁榮穩定**。"
+          }
+        ],
+        resources: [
+          { name: "課本教材：CS_T1U2_AnsCheck_RMA.pdf（第 20–26 頁）", url: DRIVE_U2 },
+          { name: "《基本法》第七章：對外事務（第 150–157 條）", url: "https://www.basiclaw.gov.hk/tc/basiclaw/chapter7.html" }
+        ],
+        feynmanPrompt: "請向 12 歲學生解釋：香港參加國際組織時，什麼時候用「中國代表團成員」身份？什麼時候用「中國香港」名義？並說明香港法院行使獨立司法權時有哪三個限制。",
+        keywords: ["行政管理權", "立法權", "終審權", "國防", "外交", "中國代表團成員", "世界衛生組織", "中國香港", "亞太區經濟合作組織", "深圳灣口岸"],
+        masterFeynman: "區分香港參與國際組織的身份只要看一個標準：「那個組織是不是只准主權國家入會？」(1) 如果是「國家限定局」（如**世界衛生組織 WHO、G20、IMF、世界銀行、ITU**），香港就以**「中國代表團成員」**身份跟團參加；(2) 如果允許單獨關稅區或經濟體參加（如**亞太區經濟合作組織 APEC、世貿 WTO、亞投行 AIIB、C40**），香港就用**「中國香港」**名義參加！另外香港享有**行政管理權、立法權、獨立司法權和終審權**（還可依第 20 條獲額外授權管轄**深圳灣口岸**港方口岸區），但法院有三個法定邊界：受原有法律原則限制、**不能審理國防和外交等國家行為**、涉及中央事務或關係且影響判決時須提請人大常委會釋法。",
+        mnemonic: "「**國家單位跟團進（WHO/IMF/G20/ITU），非國家單位掛中國香港進（APEC/WTO/AIIB/C40）；第 20 條其他授權記深圳灣港方口岸區**」。",
+        quizzes: [
+          {
+            q: "1. 【對外事務辨析（頁 23 資料 2.19）】香港特區參與以下哪一個國際組織時，是以「中國香港」的名義單獨參加，而非以「中國代表團成員」身份參加？",
+            options: [
+              "A. 世界衛生組織（WHO）",
+              "B. 國際貨幣基金組織（IMF）",
+              "C. 亞太區經濟合作組織（APEC）及亞洲基礎設施投資銀行（AIIB）",
+              "D. 二十國集團（G20）"
+            ],
+            correct: 2,
+            explanation: "正確答案為 C（見 CS_T1U2 頁 23 資料 2.19）：**WHO、IMF、G20、ITU 及世界銀行均以國家為單位，香港以中國代表團成員身份參加；APEC、AIIB、WTO 法律支援中心及 C40 不以國家為單位，香港以「中國香港」名義參加**。"
+          },
+          {
+            q: "2. 【《基本法》第 20 條（頁 23 資料 2.20）】2006 年全國人大常委會授權香港特區對「深圳灣口岸港方口岸區」行使管轄權並實施香港法律，這是依據《基本法》哪一項權力範疇？",
+            options: [
+              "A. 香港特區固有的剩餘權力",
+              "B. 中央根據《基本法》第二十條授予香港特區的其他權力",
+              "C. 香港法院自行擴充的司法管轄權",
+              "D. 外交部駐港特派員公署授予的外交權"
+            ],
+            correct: 1,
+            explanation: "正確答案為 B（見 CS_T1U2 頁 23）：**《基本法》第 20 條訂明香港特區可享有全國人大及其常委會和中央人民政府授予的其他權力，深圳灣口岸港方口岸區即為典型例子**。"
+          }
+        ]
+      }
+    ];
+
+    let currentSessionIdx = 0;
+    let completedSessions = {};
+    let timerSeconds = 15 * 60;
+    let timerInterval = null;
+    let allBlanksRevealed = false;
+    let redHighlightEnabled = true;
+
+    function initApp() {
+      try {
+        const saved = localStorage.getItem("cs_t1_u1_u2_completed");
+        if (saved) completedSessions = JSON.parse(saved);
+      } catch (e) {}
+      renderSessionList();
+      selectSession(0);
+      bindEvents();
+    }
+
+    function saveProgress() {
+      try {
+        localStorage.setItem("cs_t1_u1_u2_completed", JSON.stringify(completedSessions));
+      } catch (e) {}
+    }
+
+    function renderSessionList() {
+      const container = document.getElementById("sessionList");
+      container.innerHTML = "";
+      SESSIONS.forEach((s, idx) => {
+        const isDone = !!completedSessions[s.id];
+        const isCurrent = idx === currentSessionIdx;
+        const btn = document.createElement("button");
+        btn.className = "w-full text-left p-2.5 rounded-lg border text-xs transition-all flex items-start justify-between gap-2 " +
+          (isCurrent ? "bg-red-50 border-red-600 text-slate-950 font-bold shadow-sm" : "bg-white border-slate-200 text-slate-700 hover:bg-slate-50");
+        btn.innerHTML =
+          '<div>' +
+            '<div class="text-[11px] font-bold ' + (isCurrent ? 'text-red-700' : 'text-slate-400') + '">' + s.ch + '</div>' +
+            '<div class="mt-0.5 leading-snug">' + s.title + '</div>' +
+          '</div>' +
+          '<span class="shrink-0 px-1.5 py-0.5 rounded text-[10px] font-bold ' +
+            (isDone ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-500') + '">' +
+            (isDone ? '✓ 完成' : '2h') +
+          '</span>';
+        btn.addEventListener("click", () => selectSession(idx));
+        container.appendChild(btn);
+      });
+
+      const doneCount = Object.keys(completedSessions).filter(k => completedSessions[k]).length;
+      document.getElementById("globalProgressBar").style.width = (doneCount * 10) + "%";
+      document.getElementById("globalProgressText").textContent = doneCount + " / 10 節（" + (doneCount * 2) + "h）";
+    }
+
+    function formatBlanksHtml(text) {
+      return text.replace(/【([^】]+)】/g, function(match, p1) {
+        return '<span class="blank-pill" onclick="this.classList.toggle(\'revealed\')" title="點擊顯示/隱藏紅字答案">' + p1 + '</span>';
+      });
+    }
+
+    function selectSession(idx) {
+      currentSessionIdx = idx;
+      allBlanksRevealed = false;
+      const s = SESSIONS[idx];
+
+      document.getElementById("sessionChapterBadge").textContent = "對應章節：" + s.ch;
+      document.getElementById("sessionPdfBadge").textContent = "檔案：" + s.pdf;
+      document.getElementById("sessionTitle").textContent = s.title;
+      document.getElementById("sessionSubtitle").textContent = s.subtitle;
+      document.getElementById("sessionOutcomes").innerHTML = renderHighlights(s.outcomes);
+
+      const isDone = !!completedSessions[s.id];
+      const markBtn = document.getElementById("btnMarkComplete");
+      markBtn.textContent = isDone ? "✓ 已完成本節" : "標記本節完成";
+      markBtn.className = "px-3.5 py-2 rounded-lg text-xs font-bold border transition-all " +
+        (isDone ? "bg-emerald-600 text-white border-emerald-600" : "bg-white text-slate-700 border-slate-300 hover:bg-slate-100");
+
+      // Render Core Points with Bold Red Highlights
+      const coreList = document.getElementById("corePointsList");
+      coreList.innerHTML = "";
+      s.corePoints.forEach(pt => {
+        const div = document.createElement("div");
+        div.className = "p-3.5 rounded-xl bg-slate-50 border border-slate-200 leading-relaxed whitespace-pre-line";
+        div.innerHTML = renderHighlights(pt);
+        coreList.appendChild(div);
+      });
+
+      // Render Table with Bold Red Highlights
+      const tableWrapper = document.getElementById("tableWrapper");
+      const tableEl = document.getElementById("sessionTable");
+      if (s.tableData) {
+        tableWrapper.classList.remove("hidden");
+        document.getElementById("tableTitle").textContent = s.tableData.title;
+        let thead = '<thead class="bg-slate-100 text-slate-800 border-b border-slate-200"><tr>';
+        s.tableData.headers.forEach(h => {
+          thead += '<th class="p-2.5 font-bold border-r border-slate-200 last:border-r-0">' + renderHighlights(h) + '</th>';
+        });
+        thead += '</tr></thead>';
+
+        let tbody = '<tbody class="divide-y divide-slate-200">';
+        s.tableData.rows.forEach(row => {
+          tbody += '<tr class="hover:bg-slate-50">';
+          row.forEach((cell, cIdx) => {
+            tbody += '<td class="p-2.5 align-top border-r border-slate-200 last:border-r-0 whitespace-pre-line ' + (cIdx === 0 ? 'font-bold text-slate-900 bg-slate-50/50' : 'text-slate-700') + '">' + renderHighlights(cell) + '</td>';
+          });
+          tbody += '</tr>';
+        });
+        tbody += '</tbody>';
+        tableEl.innerHTML = thead + tbody;
+      } else {
+        tableWrapper.classList.add("hidden");
+      }
+
+      // Render Resources
+      const resList = document.getElementById("resourcesList");
+      resList.innerHTML = "";
+      s.resources.forEach(r => {
+        const a = document.createElement("a");
+        a.href = r.url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+        a.className = "p-3 rounded-xl border border-blue-200 bg-blue-50/50 hover:bg-blue-100/70 transition-all text-xs font-semibold text-blue-900 flex items-center justify-between gap-2";
+        a.innerHTML = '<span>🔗 ' + r.name + '</span><span class="text-blue-600 shrink-0">開啟 ↗</span>';
+        resList.appendChild(a);
+      });
+
+      // Render AnsCheck Blanks
+      const blanksList = document.getElementById("blanksList");
+      blanksList.innerHTML = "";
+      s.blanks.forEach((bText, bIdx) => {
+        const li = document.createElement("li");
+        li.className = "p-3.5 rounded-xl bg-slate-50 border border-slate-200 leading-loose";
+        li.innerHTML = '<span class="font-bold text-slate-500 mr-1.5">' + (bIdx + 1) + '.</span>' + formatBlanksHtml(bText);
+        blanksList.appendChild(li);
+      });
+
+      // Render AnsCheck Q&A with Bold Red Highlights
+      const qaList = document.getElementById("qaList");
+      qaList.innerHTML = "";
+      s.qaItems.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "rounded-xl border border-indigo-200 bg-indigo-50/40 p-4 space-y-2";
+        card.innerHTML =
+          '<div class="text-xs font-bold text-indigo-950">📌 ' + item.title + '</div>' +
+          '<div class="text-xs text-slate-800 leading-relaxed whitespace-pre-line bg-white p-3 rounded-lg border border-indigo-100">' + renderHighlights(item.answer) + '</div>';
+        qaList.appendChild(card);
+      });
+
+      // Render Feynman with Bold Red Highlights
+      document.getElementById("feynmanPrompt").textContent = s.feynmanPrompt;
+      document.getElementById("feynmanInput").value = "";
+      document.getElementById("masterFeynmanBox").classList.add("hidden");
+      document.getElementById("masterFeynmanText").innerHTML = renderHighlights(s.masterFeynman);
+      document.getElementById("feynmanMnemonic").innerHTML = renderHighlights(s.mnemonic);
+      evaluateFeynmanKeywords();
+
+      // Render Quizzes with Bold Red Highlights in Explanations
+      const quizBox = document.getElementById("quizContainer");
+      quizBox.innerHTML = "";
+      s.quizzes.forEach((qz) => {
+        const card = document.createElement("div");
+        card.className = "p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-2.5";
+        const qTitle = document.createElement("div");
+        qTitle.className = "text-sm font-bold text-slate-900";
+        qTitle.textContent = qz.q;
+        card.appendChild(qTitle);
+
+        const optWrap = document.createElement("div");
+        optWrap.className = "space-y-1.5";
+        const fb = document.createElement("div");
+        fb.className = "hidden p-3 rounded-lg text-xs leading-relaxed mt-2";
+
+        qz.options.forEach((optText, oIdx) => {
+          const optBtn = document.createElement("button");
+          optBtn.className = "w-full text-left px-3 py-2.5 rounded-lg border border-slate-300 bg-white hover:bg-blue-50 text-xs font-medium transition-all";
+          optBtn.textContent = optText;
+          optBtn.addEventListener("click", () => {
+            fb.classList.remove("hidden");
+            if (oIdx === qz.correct) {
+              fb.className = "p-3 rounded-lg text-xs leading-relaxed mt-2 bg-emerald-50 text-slate-900 border border-emerald-300 font-medium";
+              fb.innerHTML = "✅ <strong class='text-emerald-700'>答對了！</strong> " + renderHighlights(qz.explanation);
+            } else {
+              fb.className = "p-3 rounded-lg text-xs leading-relaxed mt-2 bg-rose-50 text-slate-900 border border-rose-300 font-medium";
+              fb.innerHTML = "❌ <strong class='text-rose-700'>再想一想！</strong> " + renderHighlights(qz.explanation);
+            }
+          });
+          optWrap.appendChild(optBtn);
+        });
+
+        card.appendChild(optWrap);
+        card.appendChild(fb);
+        quizBox.appendChild(card);
+      });
+
+      renderSessionList();
+    }
+
+    function evaluateFeynmanKeywords() {
+      const s = SESSIONS[currentSessionIdx];
+      const val = document.getElementById("feynmanInput").value;
+      const badgeBox = document.getElementById("keywordBadges");
+      badgeBox.innerHTML = "";
+      let hit = 0;
+      s.keywords.forEach(kw => {
+        const matched = val.includes(kw);
+        if (matched) hit++;
+        const span = document.createElement("span");
+        span.className = "px-2.5 py-1 rounded-full text-xs font-bold border transition-all " +
+          (matched ? "bg-emerald-100 text-emerald-800 border-emerald-400 shadow-sm" : "bg-red-50 text-red-600 border-red-300");
+        span.textContent = (matched ? "✓ " : "❗ ") + kw;
+        badgeBox.appendChild(span);
+      });
+      document.getElementById("keywordScore").textContent = hit + " / " + s.keywords.length + " 個核心概念詞";
+    }
+
+    function switchTab(tabName) {
+      const tabs = ["Core", "Ans", "Feynman", "Review"];
+      tabs.forEach(t => {
+        const btn = document.getElementById("tabBtn" + t);
+        const panel = document.getElementById("tabPanel" + t);
+        if (t === tabName) {
+          btn.className = "py-2.5 px-2 rounded-lg text-xs font-semibold transition-all tab-active";
+          panel.classList.remove("hidden");
+        } else {
+          btn.className = "py-2.5 px-2 rounded-lg text-xs font-semibold transition-all text-slate-600 hover:bg-slate-100";
+          panel.classList.add("hidden");
+        }
+      });
+    }
+
+    function renderFullBook(filterKeyword) {
+      const container = document.getElementById("fullBookContainer");
+      container.innerHTML = "";
+      const kw = (filterKeyword || "").trim().toLowerCase();
+
+      SESSIONS.forEach(s => {
+        const combinedText = (
+          s.ch + " " + s.title + " " + s.subtitle + " " +
+          s.corePoints.join(" ") + " " +
+          s.blanks.join(" ") + " " +
+          s.qaItems.map(q => q.title + " " + q.answer).join(" ") + " " +
+          s.masterFeynman + " " + s.mnemonic
+        ).toLowerCase();
+
+        if (kw && !combinedText.includes(kw)) return;
+
+        const block = document.createElement("div");
+        block.className = "bg-white rounded-xl shadow-sm border border-slate-200 p-5 space-y-4";
+
+        let html =
+          '<div class="border-b border-slate-200 pb-3 flex flex-wrap items-center justify-between gap-2">' +
+            '<div>' +
+              '<span class="px-2.5 py-0.5 text-xs font-bold bg-red-100 text-red-800 rounded-full">' + s.ch + '</span>' +
+              '<h3 class="text-lg font-bold text-slate-900 mt-1">' + s.title + '</h3>' +
+              '<p class="text-xs text-slate-500">' + s.subtitle + '</p>' +
+            '</div>' +
+          '</div>';
+
+        html += '<div class="space-y-2"><div class="text-xs font-bold text-blue-800">📌 課本無遺漏全內容（紅字為必背重點）：</div>';
+        s.corePoints.forEach(pt => {
+          html += '<div class="p-3 rounded-lg bg-slate-50 border border-slate-200 text-xs leading-relaxed whitespace-pre-line">' + renderHighlights(pt) + '</div>';
+        });
+        html += '</div>';
+
+        html += '<div class="space-y-2"><div class="text-xs font-bold text-red-700">✏️ 課節重溫填充完整答案（粗體紅字）：</div>';
+        s.blanks.forEach(b => {
+          const revealedText = b.replace(/【([^】]+)】/g, '<strong class="hl-red">【$1】</strong>');
+          html += '<div class="p-2.5 rounded-lg bg-red-50/40 border border-red-200 text-xs leading-relaxed">' + revealedText + '</div>';
+        });
+        html += '</div>';
+
+        html += '<div class="space-y-2"><div class="text-xs font-bold text-indigo-800">📖 資料剖析、課堂活動與能力評估標準答案：</div>';
+        s.qaItems.forEach(qa => {
+          html +=
+            '<div class="p-3 rounded-lg bg-indigo-50/40 border border-indigo-200 text-xs space-y-1">' +
+              '<div class="font-bold text-indigo-950">' + qa.title + '</div>' +
+              '<div class="text-slate-800 whitespace-pre-line leading-relaxed">' + renderHighlights(qa.answer) + '</div>' +
+            '</div>';
+        });
+        html += '</div>';
+
+        html +=
+          '<div class="p-3 rounded-lg bg-amber-50 border border-amber-200 text-xs space-y-1">' +
+            '<div class="font-bold text-amber-900">🎙️ 費曼白話示範與記憶口訣：</div>' +
+            '<div class="text-slate-800 leading-relaxed">' + renderHighlights(s.masterFeynman) + '</div>' +
+            '<div class="font-bold text-amber-950 pt-1">🧠 口訣：' + renderHighlights(s.mnemonic) + '</div>' +
+          '</div>';
+
+        block.innerHTML = html;
+        container.appendChild(block);
+      });
+
+      if (container.children.length === 0) {
+        container.innerHTML = '<div class="bg-white rounded-xl p-8 text-center text-sm text-slate-500 border border-slate-200">找不到包含「' + filterKeyword + '」的章節內容，請嘗試其他關鍵字。</div>';
+      }
+    }
+
+    function updateTimerDisplay() {
+      const m = Math.floor(timerSeconds / 60);
+      const s = timerSeconds % 60;
+      document.getElementById("timerDisplay").textContent =
+        String(m).padStart(2, "0") + ":" + String(s).padStart(2, "0");
+    }
+
+    function bindEvents() {
+      document.getElementById("tabBtnCore").addEventListener("click", () => switchTab("Core"));
+      document.getElementById("tabBtnAns").addEventListener("click", () => switchTab("Ans"));
+      document.getElementById("tabBtnFeynman").addEventListener("click", () => switchTab("Feynman"));
+      document.getElementById("tabBtnReview").addEventListener("click", () => switchTab("Review"));
+
+      document.getElementById("btnPrevSession").addEventListener("click", () => {
+        const nextIdx = (currentSessionIdx - 1 + SESSIONS.length) % SESSIONS.length;
+        selectSession(nextIdx);
+      });
+      document.getElementById("btnNextSession").addEventListener("click", () => {
+        const nextIdx = (currentSessionIdx + 1) % SESSIONS.length;
+        selectSession(nextIdx);
+      });
+
+      document.getElementById("btnMarkComplete").addEventListener("click", () => {
+        const s = SESSIONS[currentSessionIdx];
+        completedSessions[s.id] = !completedSessions[s.id];
+        saveProgress();
+        selectSession(currentSessionIdx);
+      });
+
+      // Toggle Red Bold Highlights
+      document.getElementById("btnToggleRedHl").addEventListener("click", (e) => {
+        redHighlightEnabled = !redHighlightEnabled;
+        if (redHighlightEnabled) {
+          document.body.classList.remove("hide-red-hl");
+          e.target.textContent = "🔴 重點紅字：開啟中";
+          e.target.className = "px-3 py-2 bg-red-600 hover:bg-red-500 text-white rounded-lg text-xs font-bold transition-all shadow-sm";
+        } else {
+          document.body.classList.add("hide-red-hl");
+          e.target.textContent = "⚪ 重點紅字：已隱藏";
+          e.target.className = "px-3 py-2 bg-slate-700 hover:bg-slate-600 text-slate-200 rounded-lg text-xs font-bold transition-all";
+        }
+      });
+
+      document.getElementById("btnToggleAllBlanks").addEventListener("click", () => {
+        allBlanksRevealed = !allBlanksRevealed;
+        document.querySelectorAll("#blanksList .blank-pill").forEach(el => {
+          if (allBlanksRevealed) el.classList.add("revealed");
+          else el.classList.remove("revealed");
+        });
+      });
+
+      document.getElementById("feynmanInput").addEventListener("input", evaluateFeynmanKeywords);
+      document.getElementById("btnAutoFillFeynman").addEventListener("click", () => {
+        const s = SESSIONS[currentSessionIdx];
+        const plainMaster = s.masterFeynman.replace(/\*\*/g, "");
+        document.getElementById("feynmanInput").value = plainMaster + " （關鍵詞：" + s.keywords.join("、") + "）";
+        evaluateFeynmanKeywords();
+      });
+      document.getElementById("btnCheckFeynman").addEventListener("click", () => {
+        evaluateFeynmanKeywords();
+        document.getElementById("masterFeynmanBox").classList.remove("hidden");
+      });
+      document.getElementById("btnToggleMasterFeynman").addEventListener("click", () => {
+        document.getElementById("masterFeynmanBox").classList.toggle("hidden");
+      });
+
+      // Timer events
+      document.getElementById("btnStartTimer").addEventListener("click", () => {
+        if (timerInterval) {
+          clearInterval(timerInterval);
+          timerInterval = null;
+        } else {
+          timerInterval = setInterval(() => {
+            if (timerSeconds > 0) {
+              timerSeconds--;
+              updateTimerDisplay();
+            } else {
+              clearInterval(timerInterval);
+              timerInterval = null;
+            }
+          }, 1000);
+        }
+      });
+      document.getElementById("btnReset35").addEventListener("click", () => {
+        if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+        timerSeconds = 35 * 60;
+        document.getElementById("timerPhaseBadge").textContent = "35:00 核心精讀";
+        updateTimerDisplay();
+      });
+      document.getElementById("btnReset40").addEventListener("click", () => {
+        if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+        timerSeconds = 40 * 60;
+        document.getElementById("timerPhaseBadge").textContent = "40:00 費曼演練";
+        updateTimerDisplay();
+      });
+      document.getElementById("btnReset15").addEventListener("click", () => {
+        if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+        timerSeconds = 15 * 60;
+        document.getElementById("timerPhaseBadge").textContent = "15:00 課後複盤";
+        updateTimerDisplay();
+      });
+
+      // Full Book & Search Mode
+      document.getElementById("btnToggleFullBook").addEventListener("click", () => {
+        const fbSec = document.getElementById("fullBookSection");
+        const mainSec = document.getElementById("interactiveMain");
+        const isHidden = fbSec.classList.contains("hidden");
+        if (isHidden) {
+          renderFullBook(document.getElementById("globalSearchInput").value);
+          fbSec.classList.remove("hidden");
+          mainSec.classList.add("hidden");
+        } else {
+          fbSec.classList.add("hidden");
+          mainSec.classList.remove("hidden");
+        }
+      });
+
+      document.getElementById("btnCloseFullBook").addEventListener("click", () => {
+        document.getElementById("fullBookSection").classList.add("hidden");
+        document.getElementById("interactiveMain").classList.remove("hidden");
+      });
+
+      document.getElementById("globalSearchInput").addEventListener("input", (e) => {
+        const val = e.target.value;
+        const fbSec = document.getElementById("fullBookSection");
+        const mainSec = document.getElementById("interactiveMain");
+        if (val.trim().length > 0) {
+          document.getElementById("fullBookHeaderTitle").textContent = "🔍 全書搜尋結果：「" + val + "」";
+          renderFullBook(val);
+          fbSec.classList.remove("hidden");
+          mainSec.classList.add("hidden");
+        } else {
+          document.getElementById("fullBookHeaderTitle").textContent = "📖 課題 1（Ch 1.1–1.3）及課題 2（Ch 2.1–2.4）全書無遺漏內容與答案總覽（紅字重點版）";
+          fbSec.classList.add("hidden");
+          mainSec.classList.remove("hidden");
+        }
+      });
+    }
+
+    window.addEventListener("DOMContentLoaded", initApp);
+  </script>
+</body>
+</html>
